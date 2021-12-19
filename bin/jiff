@@ -1,0 +1,130 @@
+#! /bin/sh
+
+
+#  Written by Bill Galbraith, Holy Cows, Inc.  billg (at) holycows.net
+#
+#  This script will activate the JIFF program, which on cygwin/linux 
+#  platforms, has been renamed jiff_exe, so that we can have a scripted
+#  called jiff, which will do some magic.
+
+
+# Make sure the file is specified on the command line
+
+if [ $# = "0" ]
+then
+   echo " "
+   echo "   Specify the file on the command line"
+   echo " "
+   exit 1
+fi
+
+
+
+
+# Check to see if this file exists (.xml is specified)
+if [ -f $1 ]
+then
+	echo "File is $1"
+
+	FILENAME=$1
+	#Build the base name of the file (no .xml)
+	BASENAME=${FILENAME%.xml}
+	BASENAME=${BASENAME%_aero}
+	AERONAME=${BASENAME}_aero.xml
+
+	INPUT_FILE=$AERONAME
+	NEW_DIR=${BASENAME}.jiff
+
+# Otherwise, check to see if the file exists with .xml extension
+elif [ -f $1.xml ]
+then
+	echo "File is $1"
+
+	FILENAME=${1}.xml
+	#Build the base name of the file (no .xml)
+	BASENAME=${FILENAME%.xml}
+	BASENAME=${BASENAME%_aero}
+	AERONAME=${BASENAME}_aero.xml
+
+	INPUT_FILE=$AERONAME
+	NEW_DIR=${BASENAME}.jiff
+
+
+# Otherwise, the file doesn't exist
+else
+	echo
+	echo " No file exists: $1"
+	echo
+	echo
+	exit
+fi
+
+
+echo
+echo  "          JIFF script version 1.0"
+echo
+
+
+
+# Create the subdirectory if it doesn't already exist.
+
+if [ ! -d $NEW_DIR ]
+then
+   echo making directory $NEW_DIR to hold plots
+   mkdir $NEW_DIR
+fi
+
+# Copy the XML file to the new directory
+cp $INPUT_FILE $NEW_DIR
+
+# Delete the old files
+cd ./$NEW_DIR
+rm -rf *.png *.plt *.dat
+
+echo
+
+
+
+
+# If the GNUPLOT program exists
+if [ -f /usr/bin/gnuplot ]
+then
+   # Generate the plots
+
+   if [ $TERM = "cygwin" ]
+   then
+   
+   #  This is the Cygwin version
+      jiff_exe $INPUT_FILE -g png -G $(cygpath -am $(which gnuplot)).exe > NUL
+   
+   else
+   
+   #  This is the Linux version
+      echo jiff_exe $INPUT_FILE -g png -G $(which gnuplot)
+      jiff_exe $INPUT_FILE -g png -G $(which gnuplot)
+   
+   fi
+   
+   rm -rf *.plt *.dat $FILENAME
+   
+   cd ..
+   
+   
+   echo
+   echo
+   echo      There are .PNG files in the directory $NEW_DIR
+   echo
+   echo
+
+else
+
+   echo jiff_exe $INPUT_FILE -g png
+   jiff_exe $INPUT_FILE 
+
+   echo ""
+   echo "   No GNUPLOT program available. You might need to install this."
+   echo "   We went ahead and generated the plot commands for you."
+   echo "   They are in the directory $NEW_DIR"
+   echo ""
+
+fi

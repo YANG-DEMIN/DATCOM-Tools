@@ -1,0 +1,67 @@
+*
+*   Citation_myself
+*
+
+DIM FT
+DERIV DEG
+
+DAMP
+PART
+
+ $FLTCON WT=7000.0, LOOP=2.0,
+         NMACH=1.0,
+         MACH(1)=0.4,
+         NALT=1.0,
+         ALT(1)=0.0,
+         NALPHA=15.00,
+         ALSCHD(1)=-8.00, -6.00, -4.00, -2.00,  0.00,  2.00,  4.00,  
+         6.00,  8.00, 10.00, 12.00, 14.00, 16.00, 18.00, 20.00,
+         STMACH=0.60, TSMACH=1.40, TR=1.00$
+
+ $OPTINS SREF=320.80, CBARR=6.75, BLREF=51.70, ROUGFC=0.25E-3$
+
+ $SYNTHS XCG=21.90, ZCG=3.13,
+         XW=23.71, ZW=3.13, ALIW=2.50,
+         XH=39.20, ZH=7.75, ALIH=0.00,
+         XV=36.00, ZV=6.00,
+         XVF=28.00, ZVF=7.40$
+
+ $BODY   NX=8.00,
+         X(1)=0.0,  1.0,  2.7,  6.0,  8.8, 28.5, 39.4, 44.8,
+         R(1)=0.0, 1.3, 2.1, 2.7, 2.8, 2.7, 1.3, 0.0,
+         ZU(1)=3.5, 4.3, 4.8, 5.5, 7.4, 7.4, 6.5, 5.7,
+         ZL(1)=3.5, 2.5, 2.3, 2.1, 2.0, 2.2, 4.3, 5.7,
+         BNOSE=1.00, BLN=8.80, BTAIL=1.00, BLA=19.70,
+         ITYPE=1.00$
+
+ $WGPLNF CHRDR=9.40, CHRDTP=3.01,
+         SSPN=25.85, SSPNE=23.46,
+         SAVSI=1.30, CHSTAT=0.25, TWISTA=-3.0,
+         DHDADI=3.60, TYPE=1.00$
+
+NACA W 5 23014
+
+SAVE
+
+ $HTPLNF CHRDR=4.99, CHRDTP=2.48,
+         SSPN=9.42, SSPNE=9.21,
+         SAVSI=5.32, CHSTAT=0.25, TWISTA=0.0,
+         DHDADI=9.20, TYPE=1.00$
+
+NACA H 4 0010
+
+ $VTPLNF CHRDR=8.30, CHRDTP=3.63,
+         SSPN=9.42, SSPNE=8.85,
+         SAVSI=32.30, CHSTAT=0.25,
+         TYPE=1.00$
+
+NACA V 4 0012
+
+ $VFPLNF CHRDR=11.80, CHRDTP=0.00,
+         SSPN=2.30, SSPNE=2.10,
+         SAVSI=80.00, CHSTAT=0.00,
+         TYPE=1.00$
+
+NACA F 4 0012
+
+CASEID TOTAL: Citation_myself

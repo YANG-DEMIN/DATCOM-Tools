@@ -1,0 +1,179 @@
+  ****************************************************
+  *    USAF STABILITY AND CONTROL  DIGITAL DATCOM    *
+  *    PROGRAM REV. JAN 96   DIRECT INQUIRIES TO:    *
+  *    WRIGHT LABORATORY  (WL/FIGC)  ATTN: W. BLAKE  *
+  *      WRIGHT PATTERSON AFB, OHIO  45433           *
+  *    PHONE (513) 255-6764,   FAX (513) 258-4054    *
+  ****************************************************
+1                         CONERR - INPUT ERROR CHECKING
+0 ERROR CODES - N* DENOTES THE NUMBER OF OCCURENCES OF EACH ERROR
+0 A - UNKNOWN VARIABLE NAME
+0 B - MISSING EQUAL SIGN FOLLOWING VARIABLE NAME
+0 C - NON-ARRAY VARIABLE HAS AN ARRAY ELEMENT DESIGNATION - (N)
+0 D - NON-ARRAY VARIABLE HAS MULTIPLE VALUES ASSIGNED
+0 E - ASSIGNED VALUES EXCEED ARRAY DIMENSION
+0 F - SYNTAX ERROR
+
+0******************************  INPUT DATA CARDS  ******************************
+
+  $FLTCON NMACH=1.0,MACH(1)=.60, NALPHA=9.0,                                     
+     ALSCHD(1)=-2.0,0.0,2.0,4.0,8.0, 12.0,16.0,20.0,24.0,                        
+     RNNUB(1)=2.28E6$                                                            
+  $OPTINS SREF=2.25, CBARR=0.822, BLREF=3.0$                                     
+  $SYNTHS XCG=2.60, ZCG=0.0, XW=1.70, ZW=0.0, ALIW=0.0, XH=3.93,                 
+     ZH=0.0, ALIH=0.0, XV=3.34, VERTUP=.TRUE.$                                   
+  $BODY NX=10.,                                                                  
+     X(1)=0.0,  0.175, 0.322, 0.530, 0.85,                                       
+          1.46, 2.50,  3.43,  3.97,  4.57,                                       
+     R(1)=0.0,   0.0417, 0.0833, 0.125, 0.1665,                                  
+          0.208, 0.208,  0.208,  0.178, 0.138$                                   
+  $WGPLNF CHRDTP=0.346, SSPNE=1.29, SSPN=1.50, CHRDR=1.16, SAVSI=45.0,           
+     CHSTAT=0.25, SWAFP=0.0, TWISTA=0.0, SSPNDD=0.0, DHDADI=0.0,                 
+     DHDADO=0.0, TYPE=1.0$                                                       
+  $WGSCHR TOVC=0.060, DELTAY=1.30, XOVC=0.40, CLI=0.0, ALPHAI=0.0,               
+     CLALPA(1)=0.131, CLMAX(1)=0.82, CMO=0.0, LERI=0.0025, CLAMO=0.105$          
+  $WGSCHR CLMAXL=0.78$                                                           
+  $VTPLNF CHRDTP=0.420, SSPNE=0.63, SSPN=0.849, CHRDR=1.02, SAVSI=28.1,          
+     CHSTAT=0.25, SWAFP=0.0, TWISTA=0.0, TYPE=1.0$                               
+  $VTSCHR TOVC=0.09, XOVC=0.40, CLALPA(1)=0.141, LERI=0.0075$                    
+  $HTPLNF CHRDTP=0.253, SSPNE=0.52, SSPN=0.67, CHRDR=0.42, SAVSI=45.0,           
+     CHSTAT=0.25, SWAFP=0.0, TWISTA=0.0, SSPNDD=0.0, DHDADI=0.0,                 
+     DHDADO=0.0, TYPE=1.0$                                                       
+  $HTSCHR TOVC=0.060, DELTAY=1.30, XOVC=0.40, CLI=0.0, ALPHAI=0.0,               
+     CLALPA(1)=0.131, CLMAX(1)=0.82, CMO=0.0, LERI=0.0025, CLAMO=0.105$          
+  $SYMFLP FTYPE=1.0, NDELTA=9.0,                                                 
+     DELTA(1)=-60.0, -40.0, -20.0, -10.0, 0.0, 10.0, 20.0, 40.0, 60.0,           
+     PHETE=0.0522, PHETEP=0.0523, SPANFI=0.18, SPANFO=0.670,                     
+     CHRDFI=0.075, CHRDFO=0.051, CB=0.0038, TC=0.0076, NTYPE=1.0,$               
+  $EXPR01 CLWB(1)=0.09,0.204,0.330,0.450,0.690,0.895,1.070,1.180,1.174$          
+ TRIM                                                                            
+ CASEID INCLUDES HIGH LIFT EFFECT ON WING, EXAMPLE PROBLEM 7                     
+ NEXT CASE                                                                       
+1          THE FOLLOWING IS A LIST OF ALL INPUT CARDS FOR THIS CASE.
+0
+  $FLTCON NMACH=1.0,MACH(1)=.60, NALPHA=9.0,                                     
+     ALSCHD(1)=-2.0,0.0,2.0,4.0,8.0, 12.0,16.0,20.0,24.0,                        
+     RNNUB(1)=2.28E6$                                                            
+  $OPTINS SREF=2.25, CBARR=0.822, BLREF=3.0$                                     
+  $SYNTHS XCG=2.60, ZCG=0.0, XW=1.70, ZW=0.0, ALIW=0.0, XH=3.93,                 
+     ZH=0.0, ALIH=0.0, XV=3.34, VERTUP=.TRUE.$                                   
+  $BODY NX=10.,                                                                  
+     X(1)=0.0,  0.175, 0.322, 0.530, 0.85,                                       
+          1.46, 2.50,  3.43,  3.97,  4.57,                                       
+     R(1)=0.0,   0.0417, 0.0833, 0.125, 0.1665,                                  
+          0.208, 0.208,  0.208,  0.178, 0.138$                                   
+  $WGPLNF CHRDTP=0.346, SSPNE=1.29, SSPN=1.50, CHRDR=1.16, SAVSI=45.0,           
+     CHSTAT=0.25, SWAFP=0.0, TWISTA=0.0, SSPNDD=0.0, DHDADI=0.0,                 
+     DHDADO=0.0, TYPE=1.0$                                                       
+  $WGSCHR TOVC=0.060, DELTAY=1.30, XOVC=0.40, CLI=0.0, ALPHAI=0.0,               
+     CLALPA(1)=0.131, CLMAX(1)=0.82, CMO=0.0, LERI=0.0025, CLAMO=0.105$          
+  $WGSCHR CLMAXL=0.78$                                                           
+  $VTPLNF CHRDTP=0.420, SSPNE=0.63, SSPN=0.849, CHRDR=1.02, SAVSI=28.1,          
+     CHSTAT=0.25, SWAFP=0.0, TWISTA=0.0, TYPE=1.0$                               
+  $VTSCHR TOVC=0.09, XOVC=0.40, CLALPA(1)=0.141, LERI=0.0075$                    
+  $HTPLNF CHRDTP=0.253, SSPNE=0.52, SSPN=0.67, CHRDR=0.42, SAVSI=45.0,           
+     CHSTAT=0.25, SWAFP=0.0, TWISTA=0.0, SSPNDD=0.0, DHDADI=0.0,                 
+     DHDADO=0.0, TYPE=1.0$                                                       
+  $HTSCHR TOVC=0.060, DELTAY=1.30, XOVC=0.40, CLI=0.0, ALPHAI=0.0,               
+     CLALPA(1)=0.131, CLMAX(1)=0.82, CMO=0.0, LERI=0.0025, CLAMO=0.105$          
+  $SYMFLP FTYPE=1.0, NDELTA=9.0,                                                 
+     DELTA(1)=-60.0, -40.0, -20.0, -10.0, 0.0, 10.0, 20.0, 40.0, 60.0,           
+     PHETE=0.0522, PHETEP=0.0523, SPANFI=0.18, SPANFO=0.670,                     
+     CHRDFI=0.075, CHRDFO=0.051, CB=0.0038, TC=0.0076, NTYPE=1.0,$               
+  $EXPR01 CLWB(1)=0.09,0.204,0.330,0.450,0.690,0.895,1.070,1.180,1.174$          
+ TRIM                                                                            
+ CASEID INCLUDES HIGH LIFT EFFECT ON WING, EXAMPLE PROBLEM 7                     
+ NEXT CASE                                                                       
+0 INPUT DIMENSIONS ARE IN FT, SCALE FACTOR IS 1.0000
+
+1                               AUTOMATED STABILITY AND CONTROL METHODS PER APRIL 1976 VERSION OF DATCOM
+                                         CHARACTERISTICS AT ANGLE OF ATTACK AND IN SIDESLIP
+                                        WING-BODY-VERTICAL TAIL-HORIZONTAL TAIL CONFIGURATION
+                                       INCLUDES HIGH LIFT EFFECT ON WING, EXAMPLE PROBLEM 7
+ 
+ -----------------------  FLIGHT CONDITIONS  ------------------------           --------------  REFERENCE DIMENSIONS  ------------
+  MACH    ALTITUDE   VELOCITY    PRESSURE    TEMPERATURE     REYNOLDS             REF.      REFERENCE LENGTH   MOMENT REF. CENTER
+ NUMBER                                                       NUMBER              AREA       LONG.     LAT.     HORIZ      VERT
+             FT       FT/SEC     LB/FT**2       DEG R         1/FT               FT**2        FT        FT        FT        FT
+0 0.600                                                    2.2800E+06             2.250      0.822     3.000     2.600     0.000
+0                                                               -------------------DERIVATIVE (PER DEGREE)-------------------
+0 ALPHA     CD       CL       CM       CN       CA       XCP        CLA          CMA          CYB          CNB          CLB
+0
+   -2.0    0.021    0.081    0.0227   0.081    0.024    0.282    5.835E-02   -1.108E-02   -1.601E-02    4.017E-03   -2.307E-03
+    0.0    0.019    0.204    0.0000   0.204    0.019    0.000    6.434E-02   -1.162E-02                             -2.652E-03
+    2.0    0.021    0.339   -0.0238   0.339    0.009   -0.070    6.626E-02   -1.335E-02                             -3.049E-03
+    4.0    0.030    0.469   -0.0534   0.470   -0.003   -0.114    6.532E-02   -1.567E-02                             -3.417E-03
+    8.0    0.077    0.731   -0.1229   0.735   -0.025   -0.167    6.157E-02   -1.819E-02                             -4.150E-03
+   12.0    0.163    0.962   -0.1989   0.974   -0.041   -0.204    5.470E-02   -1.988E-02                             -4.719E-03
+   16.0    0.258    1.169   -0.2819   1.195   -0.074   -0.236    4.442E-02   -2.220E-02                             -5.133E-03
+   20.0             1.317   -0.3765                              2.147E-02   -2.024E-02                             -5.234E-03
+   24.0             1.341   -0.4439                             -9.573E-03   -1.345E-02                             -4.812E-03
+0                                    ALPHA     Q/QINF    EPSLON  D(EPSLON)/D(ALPHA)
+0
+                                     -2.0      0.937     -1.234        0.617
+                                      0.0      0.904      0.000        0.617
+                                      2.0      0.937      1.234        0.603
+                                      4.0      0.991      2.413        0.572
+                                      8.0      1.000      4.565        0.493
+                                     12.0      1.000      6.358        0.359
+                                     16.0      1.000      7.435        0.152
+                                     20.0      1.000      7.576       -0.084
+                                     24.0      1.000      6.766       -0.202
+0*NOTE* OUTPUT REFLECTS EXPERIMENTAL DATA INPUTS
+1                            AUTOMATED STABILITY AND CONTROL METHODS PER APRIL 1976 VERSION OF DATCOM
+                                         CHARACTERISTICS OF HIGH LIFT AND CONTROL DEVICES
+                                            TAIL PLAIN TRAILING-EDGE FLAP CONFIGURATION
+                                       INCLUDES HIGH LIFT EFFECT ON WING, EXAMPLE PROBLEM 7
+ -----------------------  FLIGHT CONDITIONS  ------------------------           --------------  REFERENCE DIMENSIONS  ------------
+  MACH    ALTITUDE   VELOCITY    PRESSURE    TEMPERATURE     REYNOLDS             REF.      REFERENCE LENGTH   MOMENT REF. CENTER
+ NUMBER                                                       NUMBER              AREA       LONG.     LAT.     HORIZ      VERT
+             FT       FT/SEC     LB/FT**2       DEG R         1/FT               FT**2        FT        FT        FT        FT
+0 0.600                                                    2.2800E+06             2.250      0.822     3.000     2.600     0.000
+0            ---------INCREMENTS DUE TO DEFLECTION---------              ---DERIVATIVES (PER DEGREE)---
+0     DELTA     D(CL)     D(CM)    D(CL MAX)    D(CD MIN)                (CLA)D     (CH)A       (CH)D
+
+
+      -60.0    -0.058     0.1176     0.086      0.01369                  NDM      -1.722E-03  -8.476E-03
+      -40.0    -0.046     0.0957     0.075      0.00698                  NDM                  -8.398E-03
+      -20.0    -0.034     0.0704     0.049      0.00202                  NDM                  -8.172E-03
+      -10.0    -0.019     0.0405     0.028      0.00042                  NDM                  -8.066E-03
+        0.0     0.000     0.0000     0.000      0.00000                  NDM                  -8.066E-03
+       10.0     0.019    -0.0405     0.028      0.00042                  NDM                  -8.066E-03
+       20.0     0.034    -0.0704     0.049      0.00202                  NDM                  -8.172E-03
+       40.0     0.046    -0.0957     0.075      0.00698                  NDM                  -8.398E-03
+       60.0     0.058    -0.1191     0.086      0.01369                  NDM                  -8.476E-03
+0  *** NOTE * HINGE MOMENT DERIVATIVES ARE BASED ON TWICE THE AREA-MOMENT OF THE CONTROL ABOUT ITS HINGE LINE
+
+0            --------- INDUCED DRAG COEFFICIENT INCREMENT , D(CDI) , DUE TO DEFLECTION ---------
+0       DELTA = -60.0     -40.0     -20.0     -10.0       0.0      10.0      20.0      40.0      60.0
+   ALPHA
+0
+    -2.0        2.72E-03  1.78E-03  1.02E-03  3.98E-04 -1.42E-07  1.13E-04  5.25E-04  1.11E-03  1.87E-03
+     0.0        2.30E-03  1.44E-03  7.72E-04  2.55E-04  2.55E-10  2.55E-04  7.72E-04  1.44E-03  2.30E-03
+     2.0        1.87E-03  1.11E-03  5.25E-04  1.13E-04  1.43E-07  3.98E-04  1.02E-03  1.78E-03  2.72E-03
+     4.0        1.41E-03  7.42E-04  2.59E-04 -3.99E-05  2.95E-07  5.51E-04  1.29E-03  2.15E-03  3.18E-03
+     8.0        3.80E-04 -7.49E-05 -3.39E-04 -3.83E-04  6.39E-07  8.94E-04  1.88E-03  2.96E-03  4.21E-03
+    12.0       -8.51E-04 -1.05E-03 -1.05E-03 -7.94E-04  1.05E-06  1.30E-03  2.60E-03  3.94E-03  5.44E-03
+    16.0       -2.48E-03 -2.34E-03 -2.00E-03 -1.34E-03  1.59E-06  1.85E-03  3.54E-03  5.23E-03  7.07E-03
+    20.0       -4.63E-03 -4.05E-03 -3.25E-03 -2.06E-03  2.31E-06  2.57E-03  4.79E-03  6.94E-03  9.22E-03
+    24.0       -7.31E-03 -6.18E-03 -4.80E-03 -2.95E-03  3.21E-06  3.46E-03  6.35E-03  9.07E-03  1.19E-02
+0***NDM PRINTED WHEN NO DATCOM METHODS EXIST
+1                            AUTOMATED STABILITY AND CONTROL METHODS PER APRIL 1976 VERSION OF DATCOM
+                                         CHARACTERISTICS OF HIGH LIFT AND CONTROL DEVICES
+                                          WING-BODY-TAIL TRIM WITH CONTROL DEVICE ON TAIL
+ -----------------------  FLIGHT CONDITIONS  ------------------------           --------------  REFERENCE DIMENSIONS  ------------
+  MACH    ALTITUDE   VELOCITY    PRESSURE    TEMPERATURE     REYNOLDS             REF.      REFERENCE LENGTH   MOMENT REF. CENTER
+ NUMBER                                                       NUMBER              AREA       LONG.     LAT.     HORIZ      VERT
+             FT       FT/SEC     LB/FT**2       DEG R         1/FT               FT**2        FT        FT        FT        FT
+0 0.600                                                    2.2800E+06             2.250      0.822     3.000     2.600     0.000
+0         ----------UNTRIMMED----------            -----------------------AT TRIM DEFLECTION-----------------------
+0    ALPHA     CL         CD       CM     DELTAT   D(CL)    D(CL MAX)     D(CDI)    D(CD MIN)   CH(A)        CH(D)
+0
+      -2.0    0.081     0.021    0.0227     5.6    0.011      0.016      6.31E-05   0.00024   -1.722E-03   -8.066E-03
+       0.0    0.204     0.019    0.0000     0.0    0.000      0.000      2.56E-07   0.00000                -8.066E-03
+       2.0    0.339     0.021   -0.0238    -5.9   -0.011      0.017      6.62E-05   0.00025                -8.066E-03
+       4.0    0.469     0.030   -0.0534   -14.3   -0.026      0.037      8.88E-05   0.00111                -8.112E-03
+0*NOTE** TRIM RESULTS HAVE BEEN TERMINATED DUE TO LACK OF CONTROL MOMENT.
+1          THE FOLLOWING IS A LIST OF ALL INPUT CARDS FOR THIS CASE.
+0
+1 END OF JOB.

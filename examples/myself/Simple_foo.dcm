@@ -1,0 +1,60 @@
+*
+*   Simple_foo
+*
+
+DIM CM
+DERIV DEG
+
+DAMP
+PART
+
+ $FLTCON WT=2.5, LOOP=2.0,
+         NMACH=1.0,
+         MACH(1)=0.1,
+         NALT=1.0,
+         ALT(1)=2000.0,
+         NALPHA=20.00,
+         ALSCHD(1)=-8.00, -6.00, -4.00, -2.00,  0.00,  2.00,  4.00,  
+         6.00,  8.00, 10.00, 12.00, 14.00, 16.00, 18.00, 20.00, 22.00, 
+         24.00, 26.00, 28.00, 30.00,
+         STMACH=0.60, TSMACH=1.40, TR=1.00$
+
+ $OPTINS SREF=1000.00, CBARR=10.00, BLREF=100.00, ROUGFC=0.25E-3$
+
+ $SYNTHS XCG=30.00, ZCG=0.00,
+         XW=20.00, ZW=0.00, ALIW=0.00,
+         XH=50.00, ZH=-3.50, ALIH=0.00,
+         XV=53.00, ZV=4.00,
+         XVF=0.00, ZVF=0.00$
+
+ $BODY   NX=8.00,
+         X(1)=0.0,  1.0,  3.0,  5.7,  7.7, 22.5, 59.0, 60.0,
+         R(1)=0.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 0.0,
+         ZU(1)=0.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 0.0,
+         ZL(1)=0.0, -5.0, -5.0, -5.0, -5.0, -5.0, -5.0,  0.0,
+         BNOSE=1.00, BLN=5.70, BTAIL=11.40, BLA=42.90,
+         ITYPE=1.00$
+
+ $WGPLNF CHRDR=10.00, CHRDTP=10.00,
+         SSPN=50.00, SSPNE=45.00,
+         SAVSI=0.00, CHSTAT=0.25, TWISTA=0.0,
+         DHDADI=0.00, TYPE=1.00$
+
+NACA W 5 23014
+
+SAVE
+
+ $ASYFLP STYPE=1.00, NDELTA=9.00,
+         DELTAL(1)=-20.00, -15.00, -10.00,  -5.00,   0.00,   5.00,  
+         10.00,  15.00,  20.00,
+         DELTAR(1)=20.00,  15.00,  10.00,   5.00,   0.00,  -5.00, -10.00,
+          -15.00, -20.00,
+         SPANFI=1.00, SPANFO=23.00,
+         CHRDFI=2.20, CHRDFO=2.20,
+         PHETE=0.0523$
+
+CASEID Ailerons: Simple
+SAVE
+NEXT CASE
+
+CASEID TOTAL: Simple

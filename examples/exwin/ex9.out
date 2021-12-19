@@ -1,0 +1,60 @@
+  ****************************************************
+  *    USAF STABILITY AND CONTROL  DIGITAL DATCOM    *
+  *    PROGRAM REV. JAN 96   DIRECT INQUIRIES TO:    *
+  *    WRIGHT LABORATORY  (WL/FIGC)  ATTN: W. BLAKE  *
+  *      WRIGHT PATTERSON AFB, OHIO  45433           *
+  *    PHONE (513) 255-6764,   FAX (513) 258-4054    *
+  ****************************************************
+1                         CONERR - INPUT ERROR CHECKING
+0 ERROR CODES - N* DENOTES THE NUMBER OF OCCURENCES OF EACH ERROR
+0 A - UNKNOWN VARIABLE NAME
+0 B - MISSING EQUAL SIGN FOLLOWING VARIABLE NAME
+0 C - NON-ARRAY VARIABLE HAS AN ARRAY ELEMENT DESIGNATION - (N)
+0 D - NON-ARRAY VARIABLE HAS MULTIPLE VALUES ASSIGNED
+0 E - ASSIGNED VALUES EXCEED ARRAY DIMENSION
+0 F - SYNTAX ERROR
+
+0******************************  INPUT DATA CARDS  ******************************
+
+  $FLTCON NMACH=1.0, MACH(1)=0.26, NALPHA=6.0,                                   
+    ALSCHD(1)=-5.0,0.0,5.0,10.0,15.0,20.0, RNNUB(1)=1.868E6$                     
+  $LARWB ZB=0.0, SREF=0.989, DELTEP=90.0, SFRONT=0.307, AR=1.076,                
+    L=1.915, SWET=2.28, PERBAS=2.38, SBASE=0.307, HB=0.595,                      
+    BB=1.03, BLF=.FALSE., XCG=1.44, THETAD=15.0, ROUNDN=.FALSE.,                 
+    SBS=0.57, SBSLB=0.0228, XCENSB=1.277, XCENW=1.277$                           
+ CASEID LIFTING BODY WITH SHARP LEADING EDGE, EXAMPLE PROBLEM 9                  
+ NEXT CASE                                                                       
+1          THE FOLLOWING IS A LIST OF ALL INPUT CARDS FOR THIS CASE.
+0
+  $FLTCON NMACH=1.0, MACH(1)=0.26, NALPHA=6.0,                                   
+    ALSCHD(1)=-5.0,0.0,5.0,10.0,15.0,20.0, RNNUB(1)=1.868E6$                     
+  $LARWB ZB=0.0, SREF=0.989, DELTEP=90.0, SFRONT=0.307, AR=1.076,                
+    L=1.915, SWET=2.28, PERBAS=2.38, SBASE=0.307, HB=0.595,                      
+    BB=1.03, BLF=.FALSE., XCG=1.44, THETAD=15.0, ROUNDN=.FALSE.,                 
+    SBS=0.57, SBSLB=0.0228, XCENSB=1.277, XCENW=1.277$                           
+ CASEID LIFTING BODY WITH SHARP LEADING EDGE, EXAMPLE PROBLEM 9                  
+ NEXT CASE                                                                       
+0 INPUT DIMENSIONS ARE IN FT, SCALE FACTOR IS 1.0000
+
+1                               AUTOMATED STABILITY AND CONTROL METHODS PER APRIL 1976 VERSION OF DATCOM
+                                         CHARACTERISTICS AT ANGLE OF ATTACK AND IN SIDESLIP
+                                           LOW ASPECT RATIO WINGS AND WING-BODY COMBINATIONS
+                                      LIFTING BODY WITH SHARP LEADING EDGE, EXAMPLE PROBLEM 9
+ 
+ -----------------------  FLIGHT CONDITIONS  ------------------------           --------------  REFERENCE DIMENSIONS  ------------
+  MACH    ALTITUDE   VELOCITY    PRESSURE    TEMPERATURE     REYNOLDS             REF.      REFERENCE LENGTH   MOMENT REF. CENTER
+ NUMBER                                                       NUMBER              AREA       LONG.     LAT.     HORIZ      VERT
+             FT       FT/SEC     LB/FT**2       DEG R         1/FT               FT**2        FT        FT        FT        FT
+0 0.260                                                    1.8680E+06             0.989      1.915    NA         1.440     0.000
+0                                                               -------------------DERIVATIVE (PER DEGREE)-------------------
+0 ALPHA     CD       CL       CM       CN       CA       XCP        CLA          CMA          CYB          CNB          CLB
+0
+   -5.0    0.097   -0.103   -0.0133  -0.111    0.088    0.120    1.802E-02    2.371E-03   -8.248E-03   -2.084E-05    1.153E-03
+    0.0    0.081    0.000    0.0000   0.000    0.081   ******    2.311E-02    2.966E-03   -8.691E-03   -2.168E-05    0.000E+00
+    5.0    0.089    0.128    0.0163   0.136    0.078    0.120    2.795E-02    3.567E-03   -8.029E-03   -2.042E-05   -1.410E-03
+   10.0    0.122    0.279    0.0357   0.296    0.072    0.120    3.217E-02    4.181E-03   -5.526E-03   -1.567E-05   -2.585E-03
+   15.0    0.188    0.450    0.0581   0.483    0.065    0.120    3.558E-02    4.810E-03   -2.847E-04   -5.733E-06   -2.860E-03
+   20.0    0.290    0.635    0.0838   0.696    0.056    0.120    3.854E-02    5.445E-03    8.765E-03    1.143E-05   -1.392E-03
+1          THE FOLLOWING IS A LIST OF ALL INPUT CARDS FOR THIS CASE.
+0
+1 END OF JOB.

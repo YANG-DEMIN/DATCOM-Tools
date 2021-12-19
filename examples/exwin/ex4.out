@@ -1,0 +1,301 @@
+  ****************************************************
+  *    USAF STABILITY AND CONTROL  DIGITAL DATCOM    *
+  *    PROGRAM REV. JAN 96   DIRECT INQUIRIES TO:    *
+  *    WRIGHT LABORATORY  (WL/FIGC)  ATTN: W. BLAKE  *
+  *      WRIGHT PATTERSON AFB, OHIO  45433           *
+  *    PHONE (513) 255-6764,   FAX (513) 258-4054    *
+  ****************************************************
+1                         CONERR - INPUT ERROR CHECKING
+0 ERROR CODES - N* DENOTES THE NUMBER OF OCCURENCES OF EACH ERROR
+0 A - UNKNOWN VARIABLE NAME
+0 B - MISSING EQUAL SIGN FOLLOWING VARIABLE NAME
+0 C - NON-ARRAY VARIABLE HAS AN ARRAY ELEMENT DESIGNATION - (N)
+0 D - NON-ARRAY VARIABLE HAS MULTIPLE VALUES ASSIGNED
+0 E - ASSIGNED VALUES EXCEED ARRAY DIMENSION
+0 F - SYNTAX ERROR
+
+0******************************  INPUT DATA CARDS  ******************************
+
+  $FLTCON  NMACH=1.0, MACH(1)=0.6,                                               
+   NALPHA=5.0, ALSCHD(1)=0.0,5.0,10.0,15.0,20.0, RNNUB(1)=3.1E6$                 
+  $OPTINS SREF=694.2, CBARR=18.07, BLREF=45.6$                                   
+  $SYNTHS XCG=36.68, ZCG=0.0$                                                    
+  $BODY NX=19.0,BNOSE=2.0,BTAIL=2.0,BLN=30.0,BLA=0.0,                            
+    X(1)=0.0,  2.01,  5.49,  8.975, 12.47,                                       
+       15.97, 19.47, 22.89, 26.49,  30.0,                                        
+       33.51, 37.02, 40.53, 44.03,  47.53,                                       
+       51.02, 54.52, 57.99, 60.0,                                                
+    S(1)=0.0, 2.89,   7.42, 11.32, 14.64,                                        
+       17.36, 19.49, 21.0,  21.91, 22.20,                                        
+       21.90, 21.0,  19.49, 17.36, 14.64,                                        
+       11.33, 7.42, 2.89, 0.0,                                                   
+    P(1)=0.0,  1.84,  4.72,  7.21,  9.32,                                        
+       11.05, 12.41, 13.36, 13.94, 14.14,                                        
+       13.94, 13.36, 12.41, 11.05,  9.32,                                        
+        7.21,  4.72,  1.84 , 0.0,                                                   ** ERROR **  0*A  0*B  0*C  0*D  0*E  1*F
+    R(1)=0.0, 0.293, 0.752,  1.15, 1.48,                                         
+        1.76,  1.97,  2.13,  2.22, 2.25,                                         
+        2.22,  2.13,  1.97,  1.76, 1.48,                                         
+        1.15,  0.752, 0.293, 0.0$                                                
+ NACA-W-6-65A004                                                                 
+ NACA-H-6-65A004                                                                 
+  $WGPLNF CHSTAT=0.0, SWAFP=0.0, TWISTA=0.0, SSPNDD=0.0,                         
+    DHDADI=0.0,DHDADO=0.0,TYPE=1.0$                                              
+  $SYNTHS XW=8.064,ZW=0.0,ALIW=0.0$                                              
+  $WGPLNF CHRDTP=0.0,SSPNE=6.205,SSPN=8.01,CHRDR=13.87,SAVSI=60.0$               
+  $SYNTHS XH=29.42,ZH=0.0,ALIH=0.0$                                              
+  $HTPLNF SSPNE=21.34,SSPN=22.82,CHRDR=26.62,SAVSI=38.52,CHSTAT=0.0,             
+    CHRDTP=3.80, SWAFP=0.0, TWISTA=0.0, SSPNDD=0.0,                              
+    DHDADI=0.0,DHDADO=0.0,TYPE=1.0, SHB(1)=73.5,                                 
+    SEXT(1)=73.5,RLPH(1)=47.3$                                                   
+ CASEID BODY PLUS WING PLUS CANARD, EXAMPLE PROBLEM 4, CASE 1                    
+ NEXT CASE                                                                       
+ DIM M                                                                           
+  $FLTCON NMACH=1.0, MACH(1)=2.0, RNNUB=6.56E6,                                  
+    NALPHA=5.0, ALSCHD(1)=0.0,5.0,10.0,15.0,20.0,                                
+    NALT=1.0, ALT(1)=27400.0$                                                    
+  $OPTINS SREF=64.4933,CBARR=5.5077,BLREF=13.9111$                               
+  $SYNTHS XCG=12.1800, ZCG=0.0, SCALE=0.30$                                      
+  $BODY NX=19.0,BNOSE=2.0,BTAIL=2.0,BLN=9.144,BLA=0.0,                           
+    X(1)=1.0,    1.613,  2.673,  3.736,  4.801,                                  
+         5.868,  6.934,  8.004,  9.074, 10.144,                                  
+        11.214, 12.284, 13.354, 14.420, 15.487,                                  
+        16.551, 17.618, 18.675, 19.288,                                          
+    S(1)=0.0,   0.268, 0.689, 1.052, 1.360,                                      
+         1.613, 1.811, 1.951, 2.036, 2.062,                                      
+         2.085, 1.951, 1.811, 1.613, 1.360,                                      
+         1.053, 0.689, 0.268, 0.0,                                               
+    P(1)=0.0,   0.561, 1.439, 2.198, 2.841,                                      
+         3.368, 3.783, 4.072, 4.249, 4.310,                                      
+         4.249, 4.072, 3.783, 3.368, 2.841,                                      
+         2.198, 1.439, 0.561, 0.0,                                               
+    R(1)=0.0,   0.089, 0.229, 0.351, 0.451,                                      
+         0.536, 0.600, 0.649, 0.677, 0.686,                                      
+         0.677, 0.649, 0.600, 0.536, 0.451,                                      
+         0.351, 0.229, 0.089, 0.0$                                               
+ NACA-W-S-3-30.0-2.5-20.0                                                        
+ NACA-H-S-1-50.0-2.5                                                             
+  $WGPLNF CHSTAT=0.0,                                                            
+     SWAFP=0.0,TWISTA=0.0,SSPNDD=0.0,DHDADI=0.0,DHDADO=0.0,TYPE=1.0$             
+  $SYNTHS XW=3.4579,ZW=0.0,ALIW=0.0$                                             
+  $WGPLNF CHRDTP=0.0,SSPNE=1.8913,SSPN=2.4414,CHRDR=4.2276,SAVSI=60.0$           
+  $SYNTHS XH=9.9672,ZH=0.0,ALIH=0.0$                                             
+  $HTPLNF SSPNE=6.5044,SSPN=6.9555,CHRDR=8.1138,SAVSI=38.52,CHSTAT=0.0,          
+                 CHRDTP=1.1582,                                                  
+    SWAFP=0.0,TWISTA=0.0,SSPNDD=0.0,DHDADI=0.0,DHDADO=0.0,TYPE=1.0,              
+    SHB(1)=6.8283,                                                               
+            SEXT(1)=6.8284,RLPH(1)=14.4170$                                      
+ CASEID BODY PLUS WING PLUS CANARD, EXAMPLE PROBLEM 4, CASE 2                    
+ NEXT CASE                                                                       
+1          THE FOLLOWING IS A LIST OF ALL INPUT CARDS FOR THIS CASE.
+0
+  $FLTCON  NMACH=1.0, MACH(1)=0.6,                                               
+   NALPHA=5.0, ALSCHD(1)=0.0,5.0,10.0,15.0,20.0, RNNUB(1)=3.1E6$                 
+  $OPTINS SREF=694.2, CBARR=18.07, BLREF=45.6$                                   
+  $SYNTHS XCG=36.68, ZCG=0.0$                                                    
+  $BODY NX=19.0,BNOSE=2.0,BTAIL=2.0,BLN=30.0,BLA=0.0,                            
+    X(1)=0.0,  2.01,  5.49,  8.975, 12.47,                                       
+       15.97, 19.47, 22.89, 26.49,  30.0,                                        
+       33.51, 37.02, 40.53, 44.03,  47.53,                                       
+       51.02, 54.52, 57.99, 60.0,                                                
+    S(1)=0.0, 2.89,   7.42, 11.32, 14.64,                                        
+       17.36, 19.49, 21.0,  21.91, 22.20,                                        
+       21.90, 21.0,  19.49, 17.36, 14.64,                                        
+       11.33, 7.42, 2.89, 0.0,                                                   
+    P(1)=0.0,  1.84,  4.72,  7.21,  9.32,                                        
+       11.05, 12.41, 13.36, 13.94, 14.14,                                        
+       13.94, 13.36, 12.41, 11.05,  9.32,                                        
+        7.21,  4.72,  1.84 , 0.0,                                                
+    R(1)=0.0, 0.293, 0.752,  1.15, 1.48,                                         
+        1.76,  1.97,  2.13,  2.22, 2.25,                                         
+        2.22,  2.13,  1.97,  1.76, 1.48,                                         
+        1.15,  0.752, 0.293, 0.0$                                                
+ NACA-W-6-65A004                                                                 
+ NACA-H-6-65A004                                                                 
+  $WGPLNF CHSTAT=0.0, SWAFP=0.0, TWISTA=0.0, SSPNDD=0.0,                         
+    DHDADI=0.0,DHDADO=0.0,TYPE=1.0$                                              
+  $SYNTHS XW=8.064,ZW=0.0,ALIW=0.0$                                              
+  $WGPLNF CHRDTP=0.0,SSPNE=6.205,SSPN=8.01,CHRDR=13.87,SAVSI=60.0$               
+  $SYNTHS XH=29.42,ZH=0.0,ALIH=0.0$                                              
+  $HTPLNF SSPNE=21.34,SSPN=22.82,CHRDR=26.62,SAVSI=38.52,CHSTAT=0.0,             
+    CHRDTP=3.80, SWAFP=0.0, TWISTA=0.0, SSPNDD=0.0,                              
+    DHDADI=0.0,DHDADO=0.0,TYPE=1.0, SHB(1)=73.5,                                 
+    SEXT(1)=73.5,RLPH(1)=47.3$                                                   
+ CASEID BODY PLUS WING PLUS CANARD, EXAMPLE PROBLEM 4, CASE 1                    
+ NEXT CASE                                                                       
+0 INPUT DIMENSIONS ARE IN FT, SCALE FACTOR IS 1.0000
+
+1                             AUTOMATED STABILITY AND CONTROL METHODS PER APRIL 1976 VERSION OF DATCOM   
+                                                        WING SECTION DEFINITION
+0                                 IDEAL ANGLE OF ATTACK =   0.00000 DEG.
+
+                              ZERO LIFT ANGLE OF ATTACK =   0.00000 DEG.
+
+                                 IDEAL LIFT COEFFICIENT =   0.00000
+
+                  ZERO LIFT PITCHING MOMENT COEFFICIENT =   0.00000
+
+                             MACH ZERO LIFT-CURVE-SLOPE =   0.10052 /DEG.
+
+                                    LEADING EDGE RADIUS =   0.00112 FRACTION CHORD
+
+                              MAXIMUM AIRFOIL THICKNESS =   0.04000 FRACTION CHORD
+
+                                                DELTA-Y =   0.83905 PERCENT CHORD
+
+
+0                         MACH= 0.6000 LIFT-CURVE-SLOPE =   0.13607 /DEG.      XAC =   0.25741
+1                             AUTOMATED STABILITY AND CONTROL METHODS PER APRIL 1976 VERSION OF DATCOM   
+                                                   HORIZONTAL TAIL SECTION DEFINITION
+0                                 IDEAL ANGLE OF ATTACK =   0.00000 DEG.
+
+                              ZERO LIFT ANGLE OF ATTACK =   0.00000 DEG.
+
+                                 IDEAL LIFT COEFFICIENT =   0.00000
+
+                  ZERO LIFT PITCHING MOMENT COEFFICIENT =   0.00000
+
+                             MACH ZERO LIFT-CURVE-SLOPE =   0.10052 /DEG.
+
+                                    LEADING EDGE RADIUS =   0.00112 FRACTION CHORD
+
+                              MAXIMUM AIRFOIL THICKNESS =   0.04000 FRACTION CHORD
+
+                                                DELTA-Y =   0.83905 PERCENT CHORD
+
+
+0                         MACH= 0.6000 LIFT-CURVE-SLOPE =   0.13733 /DEG.      XAC =   0.25734
+1                               AUTOMATED STABILITY AND CONTROL METHODS PER APRIL 1976 VERSION OF DATCOM
+                                         CHARACTERISTICS AT ANGLE OF ATTACK AND IN SIDESLIP
+                                               WING-BODY-HORIZONTAL TAIL CONFIGURATION
+                                       BODY PLUS WING PLUS CANARD, EXAMPLE PROBLEM 4, CASE 1
+ 
+ -----------------------  FLIGHT CONDITIONS  ------------------------           --------------  REFERENCE DIMENSIONS  ------------
+  MACH    ALTITUDE   VELOCITY    PRESSURE    TEMPERATURE     REYNOLDS             REF.      REFERENCE LENGTH   MOMENT REF. CENTER
+ NUMBER                                                       NUMBER              AREA       LONG.     LAT.     HORIZ      VERT
+             FT       FT/SEC     LB/FT**2       DEG R         1/FT               FT**2        FT        FT        FT        FT
+0 0.600                                                    3.1000E+06           694.200     18.070    45.600    36.680     0.000
+0                                                               -------------------DERIVATIVE (PER DEGREE)-------------------
+0 ALPHA     CD       CL       CM       CN       CA       XCP        CLA          CMA          CYB          CNB          CLB
+0
+    0.0    0.007    0.000    0.0000   0.000    0.007   ******    5.840E-02   -4.304E-03   -3.660E-04   -6.036E-04    0.000E+00
+    5.0    0.020    0.306   -0.0245   0.307   -0.007   -0.080    6.027E-02   -4.403E-03                             -7.737E-04
+   10.0    0.054    0.603   -0.0440   0.603   -0.051   -0.073    4.871E-02   -1.070E-03                             -1.502E-03
+   15.0    0.091    0.793   -0.0352   0.790   -0.117   -0.045    2.118E-02    5.685E-03                             -1.996E-03
+   20.0    0.104    0.815    0.0128   0.801   -0.181    0.016   -1.265E-02    1.353E-02                             -2.103E-03
+0NOTE - CANARD CONFIGURATION EFFECTIVE EPSOLN AND D(EPSOLN)/D(ALPHA) ARE AVAILABLE AS PARTIAL OUTPUT AND IN THE FACT ARRAY
+1          THE FOLLOWING IS A LIST OF ALL INPUT CARDS FOR THIS CASE.
+0
+ DIM M                                                                           
+  $FLTCON NMACH=1.0, MACH(1)=2.0, RNNUB=6.56E6,                                  
+    NALPHA=5.0, ALSCHD(1)=0.0,5.0,10.0,15.0,20.0,                                
+    NALT=1.0, ALT(1)=27400.0$                                                    
+  $OPTINS SREF=64.4933,CBARR=5.5077,BLREF=13.9111$                               
+  $SYNTHS XCG=12.1800, ZCG=0.0, SCALE=0.30$                                      
+  $BODY NX=19.0,BNOSE=2.0,BTAIL=2.0,BLN=9.144,BLA=0.0,                           
+    X(1)=1.0,    1.613,  2.673,  3.736,  4.801,                                  
+         5.868,  6.934,  8.004,  9.074, 10.144,                                  
+        11.214, 12.284, 13.354, 14.420, 15.487,                                  
+        16.551, 17.618, 18.675, 19.288,                                          
+    S(1)=0.0,   0.268, 0.689, 1.052, 1.360,                                      
+         1.613, 1.811, 1.951, 2.036, 2.062,                                      
+         2.085, 1.951, 1.811, 1.613, 1.360,                                      
+         1.053, 0.689, 0.268, 0.0,                                               
+    P(1)=0.0,   0.561, 1.439, 2.198, 2.841,                                      
+         3.368, 3.783, 4.072, 4.249, 4.310,                                      
+         4.249, 4.072, 3.783, 3.368, 2.841,                                      
+         2.198, 1.439, 0.561, 0.0,                                               
+    R(1)=0.0,   0.089, 0.229, 0.351, 0.451,                                      
+         0.536, 0.600, 0.649, 0.677, 0.686,                                      
+         0.677, 0.649, 0.600, 0.536, 0.451,                                      
+         0.351, 0.229, 0.089, 0.0$                                               
+ NACA-W-S-3-30.0-2.5-20.0                                                        
+ NACA-H-S-1-50.0-2.5                                                             
+  $WGPLNF CHSTAT=0.0,                                                            
+     SWAFP=0.0,TWISTA=0.0,SSPNDD=0.0,DHDADI=0.0,DHDADO=0.0,TYPE=1.0$             
+  $SYNTHS XW=3.4579,ZW=0.0,ALIW=0.0$                                             
+  $WGPLNF CHRDTP=0.0,SSPNE=1.8913,SSPN=2.4414,CHRDR=4.2276,SAVSI=60.0$           
+  $SYNTHS XH=9.9672,ZH=0.0,ALIH=0.0$                                             
+  $HTPLNF SSPNE=6.5044,SSPN=6.9555,CHRDR=8.1138,SAVSI=38.52,CHSTAT=0.0,          
+                 CHRDTP=1.1582,                                                  
+    SWAFP=0.0,TWISTA=0.0,SSPNDD=0.0,DHDADI=0.0,DHDADO=0.0,TYPE=1.0,              
+    SHB(1)=6.8283,                                                               
+            SEXT(1)=6.8284,RLPH(1)=14.4170$                                      
+ CASEID BODY PLUS WING PLUS CANARD, EXAMPLE PROBLEM 4, CASE 2                    
+ NEXT CASE                                                                       
+0 INPUT DIMENSIONS ARE IN M , SCALE FACTOR IS 0.3000
+
+1                             AUTOMATED STABILITY AND CONTROL METHODS PER APRIL 1976 VERSION OF DATCOM   
+                                                        WING SECTION DEFINITION
+0                                 IDEAL ANGLE OF ATTACK =   0.00000 DEG.
+
+                              ZERO LIFT ANGLE OF ATTACK =   0.00000 DEG.
+
+                                 IDEAL LIFT COEFFICIENT =   0.00000
+
+                  ZERO LIFT PITCHING MOMENT COEFFICIENT =   0.00000
+
+                             MACH ZERO LIFT-CURVE-SLOPE =   0.09929 /DEG.
+
+                                    LEADING EDGE RADIUS =   0.00000 FRACTION CHORD
+
+                              MAXIMUM AIRFOIL THICKNESS =   0.02500 FRACTION CHORD
+
+                                                DELTA-Y =   0.24375 PERCENT CHORD
+
+
+0                                    *** CREST CRITICAL MACH NUMBER EXCEEDED ***
+
+                                    CREST CRITICAL MACH =   0.84884
+
+                                               LOCATION =   0.30301 FRACTION CHORD
+
+                                       LIFT-CURVE-SLOPE =   0.17182 /DEG.
+1                             AUTOMATED STABILITY AND CONTROL METHODS PER APRIL 1976 VERSION OF DATCOM   
+                                                   HORIZONTAL TAIL SECTION DEFINITION
+0                                 IDEAL ANGLE OF ATTACK =   0.00000 DEG.
+
+                              ZERO LIFT ANGLE OF ATTACK =   0.00000 DEG.
+
+                                 IDEAL LIFT COEFFICIENT =   0.00000
+
+                  ZERO LIFT PITCHING MOMENT COEFFICIENT =   0.00000
+
+                             MACH ZERO LIFT-CURVE-SLOPE =   0.09889 /DEG.
+
+                                    LEADING EDGE RADIUS =   0.00000 FRACTION CHORD
+
+                              MAXIMUM AIRFOIL THICKNESS =   0.02500 FRACTION CHORD
+
+                                                DELTA-Y =   0.14625 PERCENT CHORD
+
+
+0                                    *** CREST CRITICAL MACH NUMBER EXCEEDED ***
+
+                                    CREST CRITICAL MACH =   0.86472
+
+                                               LOCATION =   0.47537 FRACTION CHORD
+
+                                       LIFT-CURVE-SLOPE =   0.18101 /DEG.
+1                               AUTOMATED STABILITY AND CONTROL METHODS PER APRIL 1976 VERSION OF DATCOM
+                                         CHARACTERISTICS AT ANGLE OF ATTACK AND IN SIDESLIP
+                                               WING-BODY-HORIZONTAL TAIL CONFIGURATION
+                                       BODY PLUS WING PLUS CANARD, EXAMPLE PROBLEM 4, CASE 2
+ 
+ -----------------------  FLIGHT CONDITIONS  ------------------------           --------------  REFERENCE DIMENSIONS  ------------
+  MACH    ALTITUDE   VELOCITY    PRESSURE    TEMPERATURE     REYNOLDS             REF.      REFERENCE LENGTH   MOMENT REF. CENTER
+ NUMBER                                                       NUMBER              AREA       LONG.     LAT.     HORIZ      VERT
+              M        M/SEC      N/ M**2       DEG K         1/ M                M**2         M         M         M         M
+0 2.000   27400.00     599.91   1.7694E+03     223.933     6.5600E+06            64.493      5.508    13.911    12.180     0.000
+0                                                               -------------------DERIVATIVE (PER DEGREE)-------------------
+0 ALPHA     CD       CL       CM       CN       CA       XCP        CLA          CMA          CYB          CNB          CLB
+0
+    0.0    0.008    0.000    0.0000   0.000    0.008   ******    3.726E-02   -2.029E-02   -2.266E-04   -5.046E-04    0.000E+00
+    5.0    0.034    0.206   -0.1159   0.208    0.016   -0.556    4.044E-02   -2.318E-02                             -1.563E-06
+   10.0    0.114    0.427   -0.2465   0.440    0.038   -0.560    4.101E-02   -2.465E-02                             -3.234E-06
+   15.0    0.252    0.661   -0.4055   0.704    0.073   -0.576    4.135E-02   -2.703E-02                             -4.902E-06
+   20.0    0.470    0.932   -0.6149   1.036    0.123   -0.593    4.150E-02   -3.074E-02                             -6.431E-06
+0NOTE - CANARD CONFIGURATION EFFECTIVE EPSOLN AND D(EPSOLN)/D(ALPHA) ARE AVAILABLE AS PARTIAL OUTPUT AND IN THE FACT ARRAY
+1          THE FOLLOWING IS A LIST OF ALL INPUT CARDS FOR THIS CASE.
+0
+1 END OF JOB.

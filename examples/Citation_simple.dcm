@@ -1,0 +1,78 @@
+*
+*   File : CITATION_simple.dat
+*
+*   Purpose : This is an input file for the Digital Datcom program.
+*      This shows the simple aircraft without any control surfaces.
+*
+*   Author : Bill Galbraith
+*            Holy Cows, Inc.
+*            billg (at) holycows.net
+*
+*   Last update: 
+*       May 12, 2010 - Fixed vertical fin, removed ground and power effects.
+*
+*
+
+DIM FT
+DERIV DEG
+DAMP
+PART
+
+ $FLTCON WT=7000.0, LOOP=2.0,
+         NMACH=1.0, MACH(1)=0.4,
+         NALT=1.0, ALT(1)=0.0,
+         NALPHA=20.0, 
+         ALSCHD(1)= -16.0, -8.0, -6.0, -4.0, -2.0, 0.0, 2.0, 4.0, 8.0, 9.0,
+             10.0, 12.0, 14.0, 16.0, 18.0, 19.0, 20.0, 21.0, 22.0, 24.0,
+         STMACH=0.6, TSMACH=1.4, TR=1.0$
+
+ $OPTINS SREF=320.8, CBARR=6.75, BLREF=51.7, ROUGFC=0.25E-3$
+
+ $SYNTHS XCG=21.9, ZCG=3.125, 
+         XW=19.1,  ZW=3.125,  ALIW=2.5,
+         XH=39.2,  ZH=7.75,   ALIH=0.0, 
+         XV=36.0,  ZV=6.0,
+         XVF=28.0, ZVF=7.4,
+         SCALE=1.0, VERTUP=.TRUE.$
+
+ $BODY NX=8.0,
+       X(1)=0.0,1.0,2.7,6.0,8.8,28.5,39.4,44.8,
+       R(1)=0.0,1.25,2.1,2.7,2.76,2.7,1.25,0.0,
+       ZU(1)=3.5,4.3,4.8,5.5,7.4,7.4,6.5,5.7,
+       ZL(1)=3.5,2.5,2.25,2.1,2.0,2.2,4.3,5.7,
+       BNOSE=1.0, BLN=8.8,
+       BTAIL=1.0, BLA=19.7,
+       ITYPE=1.0, METHOD=1.0$
+
+ $WGPLNF CHRDR=9.4,   CHRDTP=3.01,
+         SSPN=25.85,  SSPNE=23.46,
+         SAVSI=1.3,
+         CHSTAT=0.25, TWISTA=-3.0,
+         DHDADI=3.6,
+         TYPE=1.0$
+
+NACA W 5 23014
+NACA H 4 0010	! Citation is 0010 at root, 0008 at tip
+NACA V 4 0012	! Citation is 0012 at root, 0008 at tip
+NACA F 4 0012	! Guess it to be the same as vertical tail for Citation.
+
+ $HTPLNF CHRDR=4.99, CHRDTP=2.48,
+         SSPN=9.42, SSPNE=9.21,
+         SAVSI=5.32,
+         CHSTAT=0.25, TWISTA=0.0,
+         DHDADI=9.2,
+         TYPE=1.0$
+
+ $VTPLNF CHRDTP=3.63, SSPNE=8.85,  SSPN=9.42, CHRDR=8.3, 
+         SAVSI=32.3,  CHSTAT=0.25, TYPE=1.0$
+
+ $VFPLNF CHRDR=11.8, CHRDTP=0.0, CHSTAT=0.0, DHDADO=0.0, 
+         SAVSI=80.0, SSPN=2.3,  SSPNE=2.1, TYPE=1.0$
+
+ $JETPWR NENGSJ=2.0,  AIETLJ=2.0,    THSTCJ=0.0,
+         JIALOC=25.8, JELLOC=4.33,   JEVLOC=5.625,
+         JEALOC=33.3, JINLTA=2.243,
+         AMBTMP=59.7, AMBSTP=2116.8, JERAD=0.755$
+
+CASEID TOTAL: Citation II Model 550 Aircraft (Simple)
+

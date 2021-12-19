@@ -1,0 +1,361 @@
+  ****************************************************
+  *    USAF STABILITY AND CONTROL  DIGITAL DATCOM    *
+  *    PROGRAM REV. JAN 96   DIRECT INQUIRIES TO:    *
+  *    WRIGHT LABORATORY  (WL/FIGC)  ATTN: W. BLAKE  *
+  *      WRIGHT PATTERSON AFB, OHIO  45433           *
+  *    PHONE (513) 255-6764,   FAX (513) 258-4054    *
+  ****************************************************
+1                         CONERR - INPUT ERROR CHECKING
+0 ERROR CODES - N* DENOTES THE NUMBER OF OCCURENCES OF EACH ERROR
+0 A - UNKNOWN VARIABLE NAME
+0 B - MISSING EQUAL SIGN FOLLOWING VARIABLE NAME
+0 C - NON-ARRAY VARIABLE HAS AN ARRAY ELEMENT DESIGNATION - (N)
+0 D - NON-ARRAY VARIABLE HAS MULTIPLE VALUES ASSIGNED
+0 E - ASSIGNED VALUES EXCEED ARRAY DIMENSION
+0 F - SYNTAX ERROR
+
+0******************************  INPUT DATA CARDS  ******************************
+
+ DIM FT                                                                          
+ PART                                                                            
+  $FLTCON  NALPHA=9.0,                                                           
+    ALSCHD(1)=-2.0,0.0,2.0,4.0,8.0,12.0,16.0,20.0,24.0$                          
+  $FLTCON  NMACH=1.0, MACH(1)=0.6, RNNUB(1)=4.26E6$                              
+  $OPTINS SREF=2.25, CBARR=0.822, BLREF=3.00$                                    
+  $SYNTHS XCG=2.60, ZCG=0.0, XW=1.70, ZW=0.0, ALIW=0.0$                          
+  $BODY NX=10.0,BNOSE=2.0,BTAIL=1.0,BLN=1.46,BLA=1.97,                           
+    X(1)=0.0, .175,.322,.530,.850,1.46,2.5,3.43,3.97,4.57,                       
+    R(1)=0.0, .0417,.0833,.125,.1665,.208,.208,.208,.178,.138$                   
+  $WGPLNF CHRDTP=0.346,SSPNE=1.29,SSPN=1.5,CHRDR=1.16,SAVSI=45.0,                
+   CHSTAT=0.25, SWAFP=0.0, TWISTA=0.0, SSPNDD=0.0, DHDADI=0.0,                   
+   DHDADO=0.0,TYPE=1.0$                                                          
+  $WGSCHR TOVC=.06,DELTAY=1.3,XOVC=0.4,CLI=0.0,ALPHAI=0.0,                       
+   CLALPA(1)=0.131, CLMAX(1)=.82,CMO=0.0,LERI=.0025,CLAMO=.105$                  
+  $WGSCHR  CLMAXL=0.8, TCEFF=.03$                                                
+ CASEID BODY-WING DAMPING DERIVATIVES, EXAMPLE PROBLEM 5, CASE 1                 
+ DAMP                                                                            
+ SAVE                                                                            
+ DUMP DYN                                                                        
+ NEXT CASE                                                                       
+  $SYMFLP NDELTA=6.0, DELTA(1)=0.,.10,.20,.30,.40,.60,                           
+   PHETE=.0522, CHRDFI=.2094, CHRDFO=.1554, SPANFI=0.208,                        
+   SPANFO=.708, FTYPE=1.0, CB=.01125, TC=.0225, PHETEP=.0391,                    
+   NTYPE=1.0$                                                                    
+ CASEID PLAIN FLAPS ON WING, EXAMPLE PROBLEM 5, CASE 2                           
+ DUMP FCM                                                                        
+ NEXT CASE                                                                       
+1          THE FOLLOWING IS A LIST OF ALL INPUT CARDS FOR THIS CASE.
+0
+ DIM FT                                                                          
+ PART                                                                            
+  $FLTCON  NALPHA=9.0,                                                           
+    ALSCHD(1)=-2.0,0.0,2.0,4.0,8.0,12.0,16.0,20.0,24.0$                          
+  $FLTCON  NMACH=1.0, MACH(1)=0.6, RNNUB(1)=4.26E6$                              
+  $OPTINS SREF=2.25, CBARR=0.822, BLREF=3.00$                                    
+  $SYNTHS XCG=2.60, ZCG=0.0, XW=1.70, ZW=0.0, ALIW=0.0$                          
+  $BODY NX=10.0,BNOSE=2.0,BTAIL=1.0,BLN=1.46,BLA=1.97,                           
+    X(1)=0.0, .175,.322,.530,.850,1.46,2.5,3.43,3.97,4.57,                       
+    R(1)=0.0, .0417,.0833,.125,.1665,.208,.208,.208,.178,.138$                   
+  $WGPLNF CHRDTP=0.346,SSPNE=1.29,SSPN=1.5,CHRDR=1.16,SAVSI=45.0,                
+   CHSTAT=0.25, SWAFP=0.0, TWISTA=0.0, SSPNDD=0.0, DHDADI=0.0,                   
+   DHDADO=0.0,TYPE=1.0$                                                          
+  $WGSCHR TOVC=.06,DELTAY=1.3,XOVC=0.4,CLI=0.0,ALPHAI=0.0,                       
+   CLALPA(1)=0.131, CLMAX(1)=.82,CMO=0.0,LERI=.0025,CLAMO=.105$                  
+  $WGSCHR  CLMAXL=0.8, TCEFF=.03$                                                
+ CASEID BODY-WING DAMPING DERIVATIVES, EXAMPLE PROBLEM 5, CASE 1                 
+ DAMP                                                                            
+ SAVE                                                                            
+ DUMP DYN                                                                        
+ NEXT CASE                                                                       
+0 INPUT DIMENSIONS ARE IN FT, SCALE FACTOR IS 1.0000
+
+ WARNING*** BODY ALONE DYNAMIC DERIVATIVE METHOD VALID FOR NOSE CYLINDER ONLY
+            TAIL EFFECTS IGNORED]
+ 
+   DYN(  1)= 1.00000E-30   DYN(  2)=-1.37623E-02   DYN(  3)= 1.00000E-30   DYN(  4)= 1.00000E-30   DYN(  5)= 1.00000E-30
+   DYN(  6)= 1.00000E-30   DYN(  7)= 1.00000E-30   DYN(  8)= 1.00000E-30   DYN(  9)= 1.00000E-30   DYN( 10)= 1.00000E-30
+   DYN( 11)= 1.00000E-30   DYN( 12)= 1.00000E-30   DYN( 13)= 1.00000E-30   DYN( 14)= 1.00000E-30   DYN( 15)= 1.00000E-30
+   DYN( 16)= 1.00000E-30   DYN( 17)= 1.00000E-30   DYN( 18)= 1.00000E-30   DYN( 19)= 1.00000E-30   DYN( 20)= 1.00000E-30
+   DYN( 21)=-5.92921E-03   DYN( 22)= 1.00000E-30   DYN( 23)= 1.00000E-30   DYN( 24)= 1.00000E-30   DYN( 25)= 1.00000E-30
+   DYN( 26)= 1.00000E-30   DYN( 27)= 1.00000E-30   DYN( 28)= 1.00000E-30   DYN( 29)= 1.00000E-30   DYN( 30)= 1.00000E-30
+   DYN( 31)= 1.00000E-30   DYN( 32)= 1.00000E-30   DYN( 33)= 1.00000E-30   DYN( 34)= 1.00000E-30   DYN( 35)= 1.00000E-30
+   DYN( 36)= 1.00000E-30   DYN( 37)= 1.00000E-30   DYN( 38)= 1.00000E-30   DYN( 39)= 1.00000E-30   DYN( 40)= 4.78802E-01
+   DYN( 41)= 1.00000E-30   DYN( 42)= 1.00000E-30   DYN( 43)= 1.00000E-30   DYN( 44)= 0.00000E+00   DYN( 45)= 4.66432E-02
+   DYN( 46)=-1.50367E-01   DYN( 47)= 4.66429E-02   DYN( 48)= 4.66432E-02   DYN( 49)= 4.67195E-02   DYN( 50)= 4.66050E-02
+   DYN( 51)= 4.51856E-02   DYN( 52)= 3.82381E-02   DYN( 53)= 2.44164E-02   DYN( 54)= 7.06772E-03   DYN( 55)=-1.18052E-02
+   DYN( 56)= 1.00000E-30   DYN( 57)= 1.00000E-30   DYN( 58)= 1.00000E-30   DYN( 59)= 1.00000E-30   DYN( 60)= 1.00000E-30
+   DYN( 61)= 1.00000E-30   DYN( 62)= 1.00000E-30   DYN( 63)= 1.00000E-30   DYN( 64)= 1.00000E-30   DYN( 65)= 1.00000E-30
+   DYN( 66)= 1.00000E-30   DYN( 67)= 0.00000E+00   DYN( 68)= 1.00000E+00   DYN( 69)=-3.86146E-02   DYN( 70)= 3.33513E+00
+   DYN( 71)=-2.45063E-01   DYN( 72)=-1.13060E-03   DYN( 73)=-7.97236E-04   DYN( 74)=-1.13060E-03   DYN( 75)=-2.13507E-03
+   DYN( 76)=-6.09190E-03   DYN( 77)=-1.23164E-02   DYN( 78)=-1.83899E-02   DYN( 79)=-2.19844E-02   DYN( 80)=-2.14480E-02
+   DYN( 81)= 1.00000E-30   DYN( 82)= 1.00000E-30   DYN( 83)= 1.00000E-30   DYN( 84)= 1.00000E-30   DYN( 85)= 1.00000E-30
+   DYN( 86)= 1.00000E-30   DYN( 87)= 1.00000E-30   DYN( 88)= 1.00000E-30   DYN( 89)= 1.00000E-30   DYN( 90)= 1.00000E-30
+   DYN( 91)= 1.00000E-30   DYN( 92)=-1.55970E-01   DYN( 93)= 9.05538E-01   DYN( 94)= 6.40340E-03   DYN( 95)=-2.42433E-04
+   DYN( 96)=-1.62232E-03   DYN( 97)= 1.00000E-30   DYN( 98)= 3.25393E-03   DYN( 99)= 6.50913E-03   DYN(100)= 1.28848E-02
+   DYN(101)= 1.76882E-02   DYN(102)= 1.91888E-02   DYN(103)= 1.65058E-02   DYN(104)= 1.39972E-02   DYN(105)= 1.00000E-30
+   DYN(106)= 1.00000E-30   DYN(107)= 1.00000E-30   DYN(108)= 1.00000E-30   DYN(109)= 1.00000E-30   DYN(110)= 1.00000E-30
+   DYN(111)= 1.00000E-30   DYN(112)= 1.00000E-30   DYN(113)= 1.00000E-30   DYN(114)= 1.00000E-30   DYN(115)= 1.00000E-30
+   DYN(116)=-1.02747E-03   DYN(117)= 1.00000E-30   DYN(118)= 2.06168E-03   DYN(119)= 4.09649E-03   DYN(120)= 7.84503E-03
+   DYN(121)= 9.47595E-03   DYN(122)= 7.44952E-03   DYN(123)= 2.35639E-03   DYN(124)=-8.26679E-04   DYN(125)= 1.00000E-30
+   DYN(126)= 1.00000E-30   DYN(127)= 1.00000E-30   DYN(128)= 1.00000E-30   DYN(129)= 1.00000E-30   DYN(130)= 1.00000E-30
+   DYN(131)= 1.00000E-30   DYN(132)= 1.00000E-30   DYN(133)= 1.00000E-30   DYN(134)= 1.00000E-30   DYN(135)= 1.00000E-30
+   DYN(136)=-3.44874E-04   DYN(137)= 1.00000E-30   DYN(138)= 6.92011E-04   DYN(139)= 1.37500E-03   DYN(140)= 2.63321E-03
+   DYN(141)= 3.18064E-03   DYN(142)= 2.50046E-03   DYN(143)= 7.90930E-04   DYN(144)=-2.77477E-04   DYN(145)= 1.00000E-30
+   DYN(146)= 1.00000E-30   DYN(147)= 1.00000E-30   DYN(148)= 1.00000E-30   DYN(149)= 1.00000E-30   DYN(150)= 1.00000E-30
+   DYN(151)= 1.00000E-30   DYN(152)= 1.00000E-30   DYN(153)= 1.00000E-30   DYN(154)= 1.00000E-30   DYN(155)= 1.00000E-30
+   DYN(156)= 4.65658E-01   DYN(157)= 1.00000E+00   DYN(158)= 4.65374E-01   DYN(159)= 4.69921E-01   DYN(160)= 4.91607E-01
+   DYN(161)= 5.66067E-01   DYN(162)= 7.03442E-01   DYN(163)= 9.00384E-01   DYN(164)= 1.03847E+00   DYN(165)= 1.00000E-30
+   DYN(166)= 1.00000E-30   DYN(167)= 1.00000E-30   DYN(168)= 1.00000E-30   DYN(169)= 1.00000E-30   DYN(170)= 1.00000E-30
+   DYN(171)= 1.00000E-30   DYN(172)= 1.00000E-30   DYN(173)= 1.00000E-30   DYN(174)= 1.00000E-30   DYN(175)= 1.00000E-30
+   DYN(176)=-2.92747E-01   DYN(177)= 0.00000E+00   DYN(178)= 4.84686E-01   DYN(179)= 2.01527E+00   DYN(180)= 5.64482E-01
+   DYN(181)= 2.14793E+00   DYN(182)=-2.85684E-03   DYN(183)=-5.37371E-01   DYN(184)= 7.74307E-03   DYN(185)= 6.37788E-03
+   DYN(186)= 7.74309E-03   DYN(187)= 1.18566E-02   DYN(188)= 2.80606E-02   DYN(189)= 5.35511E-02   DYN(190)= 7.84231E-02
+   DYN(191)= 9.31435E-02   DYN(192)= 9.09467E-02   DYN(193)= 1.00000E-30   DYN(194)= 1.00000E-30   DYN(195)= 1.00000E-30
+   DYN(196)= 1.00000E-30   DYN(197)= 1.00000E-30   DYN(198)= 1.00000E-30   DYN(199)= 1.00000E-30   DYN(200)= 1.00000E-30
+   DYN(201)= 1.00000E-30   DYN(202)= 1.00000E-30   DYN(203)= 1.00000E-30   DYN(204)= 1.00000E-30   DYN(205)= 1.00000E-30
+   DYN(206)= 1.00000E-30   DYN(207)= 1.00000E-30   DYN(208)= 1.00000E-30   DYN(209)= 1.00000E-30   DYN(210)= 1.00000E-30
+   DYN(211)= 1.00000E-30   DYN(212)= 1.00000E-30   DYN(213)= 1.00000E-30
+1                               AUTOMATED STABILITY AND CONTROL METHODS PER APRIL 1976 VERSION OF DATCOM
+                                         CHARACTERISTICS AT ANGLE OF ATTACK AND IN SIDESLIP
+                                                       WING-BODY CONFIGURATION
+                                     BODY-WING DAMPING DERIVATIVES, EXAMPLE PROBLEM 5, CASE 1
+ 
+ -----------------------  FLIGHT CONDITIONS  ------------------------           --------------  REFERENCE DIMENSIONS  ------------
+  MACH    ALTITUDE   VELOCITY    PRESSURE    TEMPERATURE     REYNOLDS             REF.      REFERENCE LENGTH   MOMENT REF. CENTER
+ NUMBER                                                       NUMBER              AREA       LONG.     LAT.     HORIZ      VERT
+             FT       FT/SEC     LB/FT**2       DEG R         1/FT               FT**2        FT        FT        FT        FT
+0 0.600                                                    4.2600E+06             2.250      0.822     3.000     2.600     0.000
+0                                                               -------------------DERIVATIVE (PER DEGREE)-------------------
+0 ALPHA     CD       CL       CM       CN       CA       XCP        CLA          CMA          CYB          CNB          CLB
+0
+   -2.0    0.016   -0.125    0.0032  -0.126    0.012   -0.026    6.258E-02   -1.352E-03   -1.612E-03   -1.845E-03    5.509E-04
+    0.0    0.015    0.000    0.0000   0.000    0.015   ******    6.258E-02   -1.864E-03                             -5.244E-12
+    2.0    0.016    0.125   -0.0042   0.126    0.012   -0.034    6.273E-02   -2.646E-03                             -5.509E-04
+    4.0    0.024    0.251   -0.0106   0.252    0.006   -0.042    6.269E-02   -3.674E-03                             -1.104E-03
+    8.0    0.067    0.500   -0.0293   0.505   -0.003   -0.058    6.082E-02   -4.565E-03                             -2.201E-03
+   12.0    0.149    0.738   -0.0471   0.752   -0.007   -0.063    5.089E-02   -3.125E-03                             -3.246E-03
+   16.0    0.236    0.907   -0.0543   0.937   -0.023   -0.058    3.176E-02   -1.423E-03                             -3.993E-03
+   20.0             0.992   -0.0585                              9.201E-03   -1.326E-04                             -4.364E-03
+   24.0             0.981   -0.0554                             -1.458E-02    1.698E-03                             -4.317E-03
+1                               AUTOMATED STABILITY AND CONTROL METHODS PER APRIL 1976 VERSION OF DATCOM
+                                                         DYNAMIC DERIVATIVES
+                                                       WING-BODY CONFIGURATION
+                                     BODY-WING DAMPING DERIVATIVES, EXAMPLE PROBLEM 5, CASE 1
+ 
+ -----------------------  FLIGHT CONDITIONS  ------------------------           --------------  REFERENCE DIMENSIONS  ------------
+  MACH    ALTITUDE   VELOCITY    PRESSURE    TEMPERATURE     REYNOLDS             REF.      REFERENCE LENGTH   MOMENT REF. CENTER
+ NUMBER                                                       NUMBER              AREA       LONG.     LAT.     HORIZ      VERT
+             FT       FT/SEC     LB/FT**2       DEG R         1/FT               FT**2        FT        FT        FT        FT
+0 0.600                                                    4.2600E+06             2.250      0.822     3.000     2.600     0.000
+                                                    DYNAMIC DERIVATIVES (PER DEGREE)
+0           -------PITCHING-------    -----ACCELERATION------    --------------ROLLING--------------    --------YAWING--------
+0   ALPHA       CLQ          CMQ           CLAD         CMAD         CLP          CYP          CNP          CNR          CLR
+0
+    -2.00    4.840E-02   -1.968E-02       NDM          NDM       -5.150E-03   -4.280E-04    1.791E-05   -7.334E-05   -6.158E-04
+     0.00                                                        -5.144E-03    0.000E+00    0.000E+00   -6.006E-05    0.000E+00
+     2.00                                                        -5.158E-03    4.277E-04   -1.763E-05   -7.334E-05    6.158E-04
+     4.00                                                        -5.163E-03    8.652E-04   -3.909E-05   -1.134E-04    1.234E-03
+     8.00                                                        -5.076E-03    1.801E-03   -1.169E-04   -2.711E-04    2.454E-03
+    12.00                                                        -4.421E-03    3.058E-03   -4.068E-04   -5.192E-04    3.620E-03
+    16.00                                                        -3.008E-03    4.697E-03   -9.953E-04   -7.613E-04    4.473E-03
+    20.00                                                        -1.163E-03    6.597E-03   -1.715E-03   -9.045E-04    4.909E-03
+    24.00                                                         9.225E-04    7.512E-03   -1.985E-03   -8.832E-04    4.847E-03
+0*** NDM PRINTED WHEN NO DATCOM METHODS EXIST
+1                             AUTOMATED STABILITY AND CONTROL METHODS PER APRIL 1976 VERSION OF DATCOM
+                                             CONFIGURATION AUXILIARY AND PARTIAL OUTPUT
+                                                       WING-BODY CONFIGURATION
+                                     BODY-WING DAMPING DERIVATIVES, EXAMPLE PROBLEM 5, CASE 1
+ -----------------------  FLIGHT CONDITIONS  ------------------------           --------------  REFERENCE DIMENSIONS  ------------
+  MACH    ALTITUDE   VELOCITY    PRESSURE    TEMPERATURE     REYNOLDS             REF.      REFERENCE LENGTH   MOMENT REF. CENTER
+ NUMBER                                                       NUMBER              AREA       LONG.     LAT.     HORIZ      VERT
+             FT       FT/SEC     LB/FT**2       DEG R         1/FT               FT**2        FT        FT        FT        FT
+0 0.600                                                    4.2600E+06             2.250      0.822     3.000     2.600     0.000
+
+
+                                                       BASIC BODY PROPERTIES
+
+            WETTED AREA      XCG     ZCG     BASE AREA     ZERO LIFT DRAG   BASE DRAG   FRICTION DRAG   PRESSURE DRAG
+             0.5043E+01     2.60    0.00       0.0598        0.7862E-02    0.1587E-02    0.6275E-02         NA  
+
+
+                                         XCG RELATIVE TO THEORETICAL LEADING EDGE MAC=   0.20
+
+
+                                                       BASIC PLANFORM PROPERTIES
+
+                                    TAPER     ASPECT   QUARTER CHORD             QUARTER CHORD              ZERO LIFT    FRICTION
+                         AREA       RATIO      RATIO       SWEEP        MAC        X(MAC)       Y(MAC)        DRAG     COEFFICIENT
+0      WING
+   TOTAL THEORITICAL
++                     0.2259E+01    0.298    0.3984E+01    45.000    0.826E+00    0.260E+01    0.615E+00                       
+       TOTAL EXPOSED
++                     0.1796E+01    0.331    0.3707E+01    45.000    0.755E+00    0.274E+01    0.747E+00    0.640E-02    0.350E-02
+0*** NA PRINTED WHEN METHOD NOT APPLICABLE
+1                             AUTOMATED STABILITY AND CONTROL METHODS PER APRIL 1976 VERSION OF DATCOM
+                                             CONFIGURATION AUXILIARY AND PARTIAL OUTPUT
+                                                       WING-BODY CONFIGURATION
+                                     BODY-WING DAMPING DERIVATIVES, EXAMPLE PROBLEM 5, CASE 1
+ -----------------------  FLIGHT CONDITIONS  ------------------------           --------------  REFERENCE DIMENSIONS  ------------
+  MACH    ALTITUDE   VELOCITY    PRESSURE    TEMPERATURE     REYNOLDS             REF.      REFERENCE LENGTH   MOMENT REF. CENTER
+ NUMBER                                                       NUMBER              AREA       LONG.     LAT.     HORIZ      VERT
+             FT       FT/SEC     LB/FT**2       DEG R         1/FT               FT**2        FT        FT        FT        FT
+0 0.600                                                    4.2600E+06             2.250      0.822     3.000     2.600     0.000
+0          CLA-B(W)= 9.008E-03     CLA-W(B)= 5.163E-02     K-B(W)= 1.940E-01     K-W(B)= 1.112E+00     XAC/C-B(W)= 6.055E-01
+
+
+
+                ALPHA         IV-B(W)          IV-W(H)          IV-B(H)          GAMMA/                  GAMMA/
+                                                                              2*PI*ALPHA*V*R         (2*PI*ALPHA*V*R)T
+                -2.000       0.0000E+00          NA               NA            0.0000E+00                  NA  
+                 0.000       0.0000E+00          NA               NA            0.0000E+00                  NA  
+                 2.000       0.0000E+00          NA               NA            0.0000E+00                  NA  
+                 4.000       0.0000E+00          NA               NA            0.0000E+00                  NA  
+                 8.000       0.0000E+00          NA               NA               NDM                      NA  
+                12.000      -0.4968E-01          NA               NA            0.4592E+00                  NA  
+                16.000      -0.1582E+00          NA               NA            0.6247E+00                  NA  
+                20.000      -0.2150E+00          NA               NA            0.7942E+00                  NA  
+                24.000      -0.2302E+00          NA               NA            0.8727E+00                  NA  
+
+
+                                                  DYNAMIC DERIVATIVE INCREMENTALS
+          CLP(GAMMA=CL=0) =-2.9275E-01     CLP(GAMMA)/CLP (GAMMA=0) = 1.0000E+00      CNP/THETA =-2.4243E-04
+                              CYP/GAMMA = 0.0000E+00                    CYP/CL (CL=0) = 5.6448E-01
+
+                                             CLB/GAMMA        (CMO/THETA)W     (CMO/THETA)H
+                                             -0.1399E-03           NA                NA  
+0*** NDM PRINTED WHEN NO DATCOM METHODS EXIST
+0*** NA PRINTED WHEN METHOD NOT APPLICABLE
+1
+1          THE FOLLOWING IS A LIST OF ALL INPUT CARDS FOR THIS CASE.
+0
+  $SYMFLP NDELTA=6.0, DELTA(1)=0.,.10,.20,.30,.40,.60,                           
+   PHETE=.0522, CHRDFI=.2094, CHRDFO=.1554, SPANFI=0.208,                        
+   SPANFO=.708, FTYPE=1.0, CB=.01125, TC=.0225, PHETEP=.0391,                    
+   NTYPE=1.0$                                                                    
+ CASEID PLAIN FLAPS ON WING, EXAMPLE PROBLEM 5, CASE 2                           
+ DUMP FCM                                                                        
+ NEXT CASE                                                                       
+0ERROR ** FLAP INBOARD SPAN, SPANI = 0.20800E+00, IT IS INSIDE THE BODY AS DEFINED BY SSPN AND SSPNE
+          SPANI IS REDEFINED, SPANI = SSPN-SSPNE = 0.21000E+00
+
+0 INPUT DIMENSIONS ARE IN FT, SCALE FACTOR IS 1.0000
+
+1                               AUTOMATED STABILITY AND CONTROL METHODS PER APRIL 1976 VERSION OF DATCOM
+                                         CHARACTERISTICS AT ANGLE OF ATTACK AND IN SIDESLIP
+                                                       WING-BODY CONFIGURATION
+                                          PLAIN FLAPS ON WING, EXAMPLE PROBLEM 5, CASE 2
+ 
+ -----------------------  FLIGHT CONDITIONS  ------------------------           --------------  REFERENCE DIMENSIONS  ------------
+  MACH    ALTITUDE   VELOCITY    PRESSURE    TEMPERATURE     REYNOLDS             REF.      REFERENCE LENGTH   MOMENT REF. CENTER
+ NUMBER                                                       NUMBER              AREA       LONG.     LAT.     HORIZ      VERT
+             FT       FT/SEC     LB/FT**2       DEG R         1/FT               FT**2        FT        FT        FT        FT
+0 0.600                                                    4.2600E+06             2.250      0.822     3.000     2.600     0.000
+0                                                               -------------------DERIVATIVE (PER DEGREE)-------------------
+0 ALPHA     CD       CL       CM       CN       CA       XCP        CLA          CMA          CYB          CNB          CLB
+0
+   -2.0    0.016   -0.125    0.0032  -0.126    0.012   -0.026    6.258E-02   -1.352E-03   -1.612E-03   -1.845E-03    5.509E-04
+    0.0    0.015    0.000    0.0000   0.000    0.015   ******    6.258E-02   -1.864E-03                             -5.244E-12
+    2.0    0.016    0.125   -0.0042   0.126    0.012   -0.034    6.273E-02   -2.646E-03                             -5.509E-04
+    4.0    0.024    0.251   -0.0106   0.252    0.006   -0.042    6.269E-02   -3.674E-03                             -1.104E-03
+    8.0    0.067    0.500   -0.0293   0.505   -0.003   -0.058    6.082E-02   -4.565E-03                             -2.201E-03
+   12.0    0.149    0.738   -0.0471   0.752   -0.007   -0.063    5.089E-02   -3.125E-03                             -3.246E-03
+   16.0    0.236    0.907   -0.0543   0.937   -0.023   -0.058    3.176E-02   -1.423E-03                             -3.993E-03
+   20.0             0.992   -0.0585                              9.201E-03   -1.326E-04                             -4.364E-03
+   24.0             0.981   -0.0554                             -1.458E-02    1.698E-03                             -4.317E-03
+ 
+   FCM(  1)= 5.13402E+01   FCM(  2)= 5.17030E+00   FCM(  3)= 3.74516E+00   FCM(  4)= 2.65321E+00   FCM(  5)= 1.97316E+00
+   FCM(  6)= 6.96020E-01   FCM(  7)= 0.00000E+00   FCM(  8)= 1.40000E-01   FCM(  9)= 1.42300E-01   FCM( 10)= 2.81700E-01
+   FCM( 11)= 4.15300E-01   FCM( 12)= 4.72000E-01   FCM( 13)= 5.40700E-01   FCM( 14)= 6.54900E-01   FCM( 15)= 7.55700E-01
+   FCM( 16)= 8.41200E-01   FCM( 17)= 9.09700E-01   FCM( 18)= 9.59500E-01   FCM( 19)= 9.89800E-01   FCM( 20)= 1.00000E+00
+   FCM( 21)=-1.91182E-02   FCM( 22)=-2.34321E-02   FCM( 23)=-2.35105E-02   FCM( 24)=-2.81473E-02   FCM( 25)=-3.12739E-02
+   FCM( 26)=-3.00299E-02   FCM( 27)=-2.83244E-02   FCM( 28)=-2.24110E-02   FCM( 29)=-1.70758E-02   FCM( 30)=-1.33402E-02
+   FCM( 31)=-1.11988E-02   FCM( 32)=-6.07304E-03   FCM( 33)=-1.62138E-03   FCM( 34)= 0.00000E+00   FCM( 35)= 2.15991E-01
+   FCM( 36)= 1.76125E-01   FCM( 37)= 1.75470E-01   FCM( 38)= 1.26860E-01   FCM( 39)= 8.16629E-02   FCM( 40)= 7.12425E-02
+   FCM( 41)= 5.86168E-02   FCM( 42)= 4.53878E-02   FCM( 43)= 3.55966E-02   FCM( 44)= 2.77520E-02   FCM( 45)= 1.97573E-02
+   FCM( 46)= 9.63920E-03   FCM( 47)= 2.42766E-03   FCM( 48)= 0.00000E+00   FCM( 49)= 4.38049E-01   FCM( 50)= 4.22790E-01
+   FCM( 51)= 4.22540E-01   FCM( 52)= 3.92159E-01   FCM( 53)= 3.43953E-01   FCM( 54)= 3.09864E-01   FCM( 55)= 2.68561E-01
+   FCM( 56)= 1.91607E-01   FCM( 57)= 1.33627E-01   FCM( 58)= 9.54707E-02   FCM( 59)= 7.06430E-02   FCM( 60)= 3.48832E-02
+   FCM( 61)= 8.78543E-03   FCM( 62)= 0.00000E+00   FCM( 63)=-3.81781E-01   FCM( 64)=-3.81781E-01   FCM( 65)=-3.81781E-01
+   FCM( 66)=-3.81781E-01   FCM( 67)=-3.81781E-01   FCM( 68)=-3.81781E-01   FCM( 69)=-3.81781E-01   FCM( 70)= 1.00000E-30
+   FCM( 71)= 1.00000E-30   FCM( 72)= 1.00000E-30   FCM( 73)= 1.04604E+00   FCM( 74)= 9.48034E-01   FCM( 75)= 9.46424E-01
+   FCM( 76)= 8.48839E-01   FCM( 77)= 7.55313E-01   FCM( 78)= 7.15621E-01   FCM( 79)= 6.67528E-01   FCM( 80)= 5.87584E-01
+   FCM( 81)= 5.17020E-01   FCM( 82)= 4.57167E-01   FCM( 83)= 4.09214E-01   FCM( 84)= 3.74352E-01   FCM( 85)= 3.53141E-01
+   FCM( 86)= 3.46000E-01   FCM( 87)= 2.22058E-01   FCM( 88)= 2.46666E-01   FCM( 89)= 2.47070E-01   FCM( 90)= 2.65298E-01
+   FCM( 91)= 2.62290E-01   FCM( 92)= 2.38622E-01   FCM( 93)= 2.09944E-01   FCM( 94)= 1.46219E-01   FCM( 95)= 9.80306E-02
+   FCM( 96)= 6.77188E-02   FCM( 97)= 5.08856E-02   FCM( 98)= 2.52440E-02   FCM( 99)= 6.35778E-03   FCM(100)= 0.00000E+00
+   FCM(101)= 1.20000E-01   FCM(102)= 1.00000E-30   FCM(103)= 1.00000E-30   FCM(104)= 1.00000E-30   FCM(105)= 1.00000E-30
+   FCM(106)= 1.00000E-30   FCM(107)= 5.86700E-01   FCM(108)= 1.53900E-02   FCM(109)= 0.00000E+00   FCM(110)= 0.00000E+00
+   FCM(111)= 0.00000E+00   FCM(112)= 0.00000E+00   FCM(113)= 0.00000E+00   FCM(114)= 1.00000E-30   FCM(115)= 1.93849E+00
+   FCM(116)= 2.14359E+00   FCM(117)= 2.14696E+00   FCM(118)= 2.35118E+00   FCM(119)= 2.54691E+00   FCM(120)= 2.62997E+00
+   FCM(121)= 2.73062E+00   FCM(122)= 2.89792E+00   FCM(123)= 3.04560E+00   FCM(124)= 3.17086E+00   FCM(125)= 3.27121E+00
+   FCM(126)= 3.34417E+00   FCM(127)= 3.38856E+00   FCM(128)= 3.40350E+00   FCM(129)= 0.00000E+00   FCM(130)= 2.20878E-01
+   FCM(131)= 2.20859E-01   FCM(132)= 2.19538E-01   FCM(133)= 2.17952E-01   FCM(134)= 2.17154E-01   FCM(135)= 0.00000E+00
+   FCM(136)= 0.00000E+00   FCM(137)= 0.00000E+00   FCM(138)= 0.00000E+00   FCM(139)= 0.00000E+00   FCM(140)= 0.00000E+00
+   FCM(141)= 0.00000E+00   FCM(142)= 0.00000E+00   FCM(143)= 4.19600E-01   FCM(144)=-7.05130E-01   FCM(145)=-7.03764E-01
+   FCM(146)=-6.75277E-01   FCM(147)=-7.37117E-01   FCM(148)=-8.16263E-01   FCM(149)=-6.69575E-01   FCM(150)=-5.48248E-01
+   FCM(151)=-6.99334E-01   FCM(152)=-8.33513E-01   FCM(153)=-9.41013E-01   FCM(154)=-1.01917E+00   FCM(155)=-1.06672E+00
+   FCM(156)=-1.06672E+00   FCM(157)= 3.88061E-01   FCM(158)=-7.05129E-01   FCM(159)=-7.03763E-01   FCM(160)=-6.75276E-01
+   FCM(161)=-7.37116E-01   FCM(162)=-8.16263E-01   FCM(163)=-6.69575E-01   FCM(164)=-5.48248E-01   FCM(165)=-6.99334E-01
+   FCM(166)=-8.33513E-01   FCM(167)=-9.41013E-01   FCM(168)=-1.01917E+00   FCM(169)=-1.06672E+00   FCM(170)=-1.06672E+00
+   FCM(171)= 3.88061E-01   FCM(172)=-7.05127E-01   FCM(173)=-7.03761E-01   FCM(174)=-6.75275E-01   FCM(175)=-7.37115E-01
+   FCM(176)=-8.16262E-01   FCM(177)=-6.69574E-01   FCM(178)=-5.48248E-01   FCM(179)=-6.99334E-01   FCM(180)=-8.33513E-01
+   FCM(181)=-9.41013E-01   FCM(182)=-1.01917E+00   FCM(183)=-1.06672E+00   FCM(184)=-1.06672E+00   FCM(185)= 3.88062E-01
+   FCM(186)=-7.05125E-01   FCM(187)=-7.03759E-01   FCM(188)=-6.75273E-01   FCM(189)=-7.37113E-01   FCM(190)=-8.16260E-01
+   FCM(191)=-6.69573E-01   FCM(192)=-5.48248E-01   FCM(193)=-6.99334E-01   FCM(194)=-8.33513E-01   FCM(195)=-9.41013E-01
+   FCM(196)=-1.01917E+00   FCM(197)=-1.06672E+00   FCM(198)=-1.06672E+00   FCM(199)= 3.88062E-01   FCM(200)=-7.05120E-01
+   FCM(201)=-7.03754E-01   FCM(202)=-6.75270E-01   FCM(203)=-7.37111E-01   FCM(204)=-8.16257E-01   FCM(205)=-6.69572E-01
+   FCM(206)=-5.48248E-01   FCM(207)=-6.99334E-01   FCM(208)=-8.33513E-01   FCM(209)=-9.41013E-01   FCM(210)=-1.01917E+00
+   FCM(211)=-1.06672E+00   FCM(212)=-1.06672E+00   FCM(213)= 3.88063E-01   FCM(214)=-7.05108E-01   FCM(215)=-7.03742E-01
+   FCM(216)=-6.75261E-01   FCM(217)=-7.37104E-01   FCM(218)=-8.16250E-01   FCM(219)=-6.69568E-01   FCM(220)=-5.48248E-01
+   FCM(221)=-6.99334E-01   FCM(222)=-8.33513E-01   FCM(223)=-9.41013E-01   FCM(224)=-1.01917E+00   FCM(225)=-1.06672E+00
+   FCM(226)=-1.06672E+00   FCM(227)= 3.88061E-01   FCM(228)=-7.05130E-01   FCM(229)=-7.03764E-01   FCM(230)=-6.75277E-01
+   FCM(231)=-7.37117E-01   FCM(232)=-8.16263E-01   FCM(233)=-6.69575E-01   FCM(234)=-5.48248E-01   FCM(235)=-6.99334E-01
+   FCM(236)=-8.33513E-01   FCM(237)=-9.41013E-01   FCM(238)=-1.01917E+00   FCM(239)=-1.06672E+00   FCM(240)=-1.06672E+00
+   FCM(241)= 1.00000E-30   FCM(242)= 1.00000E-30   FCM(243)= 1.00000E-30   FCM(244)= 1.00000E-30   FCM(245)= 1.00000E-30
+   FCM(246)= 1.00000E-30   FCM(247)= 1.00000E-30   FCM(248)= 1.00000E-30   FCM(249)= 1.00000E-30   FCM(250)= 1.00000E-30
+   FCM(251)= 1.00000E-30   FCM(252)= 1.00000E-30   FCM(253)= 1.00000E-30   FCM(254)= 1.00000E-30   FCM(255)= 1.00000E-30
+   FCM(256)= 1.00000E-30   FCM(257)= 1.00000E-30   FCM(258)= 1.00000E-30   FCM(259)= 1.00000E-30   FCM(260)= 1.00000E-30
+   FCM(261)= 1.00000E-30   FCM(262)= 1.00000E-30   FCM(263)= 1.00000E-30   FCM(264)= 1.00000E-30   FCM(265)= 1.00000E-30
+   FCM(266)= 1.00000E-30   FCM(267)= 1.00000E-30   FCM(268)= 1.00000E-30   FCM(269)= 1.00000E-30   FCM(270)= 1.00000E-30
+   FCM(271)= 1.00000E-30   FCM(272)= 1.00000E-30   FCM(273)= 1.00000E-30   FCM(274)= 1.00000E-30   FCM(275)= 1.00000E-30
+   FCM(276)= 1.00000E-30   FCM(277)= 1.00000E-30   FCM(278)= 1.00000E-30   FCM(279)= 1.00000E-30   FCM(280)= 1.00000E-30
+   FCM(281)= 1.00000E-30   FCM(282)= 1.00000E-30   FCM(283)= 4.99862E-04   FCM(284)= 5.00121E-04   FCM(285)= 5.00157E-04
+   FCM(286)= 5.00199E-04   FCM(287)= 5.00248E-04
+1                            AUTOMATED STABILITY AND CONTROL METHODS PER APRIL 1976 VERSION OF DATCOM
+                                         CHARACTERISTICS OF HIGH LIFT AND CONTROL DEVICES
+                                            WING PLAIN TRAILING-EDGE FLAP CONFIGURATION
+                                          PLAIN FLAPS ON WING, EXAMPLE PROBLEM 5, CASE 2
+ -----------------------  FLIGHT CONDITIONS  ------------------------           --------------  REFERENCE DIMENSIONS  ------------
+  MACH    ALTITUDE   VELOCITY    PRESSURE    TEMPERATURE     REYNOLDS             REF.      REFERENCE LENGTH   MOMENT REF. CENTER
+ NUMBER                                                       NUMBER              AREA       LONG.     LAT.     HORIZ      VERT
+             FT       FT/SEC     LB/FT**2       DEG R         1/FT               FT**2        FT        FT        FT        FT
+0 0.600                                                    4.2600E+06             2.250      0.822     3.000     2.600     0.000
+0            ---------INCREMENTS DUE TO DEFLECTION---------              ---DERIVATIVES (PER DEGREE)---
+0     DELTA     D(CL)     D(CM)    D(CL MAX)    D(CD MIN)                (CLA)D     (CH)A       (CH)D
+
+
+        0.0     0.000     0.0000     0.000      0.00000                  NDM      -3.847E-03  -9.630E-03
+        0.1     0.001    -0.0004     0.001      0.00001                  NDM                  -9.630E-03
+        0.2     0.002    -0.0009     0.002      0.00003                  NDM                  -9.630E-03
+        0.3     0.002    -0.0013     0.003      0.00004                  NDM                  -9.630E-03
+        0.4     0.003    -0.0017     0.003      0.00005                  NDM                  -9.630E-03
+        0.6     0.005    -0.0026     0.005      0.00008                  NDM                  -9.630E-03
+0  *** NOTE * HINGE MOMENT DERIVATIVES ARE BASED ON TWICE THE AREA-MOMENT OF THE CONTROL ABOUT ITS HINGE LINE
+
+0            --------- INDUCED DRAG COEFFICIENT INCREMENT , D(CDI) , DUE TO DEFLECTION ---------
+0       DELTA =   0.0       0.1       0.2       0.3       0.4       0.6
+   ALPHA
+0
+    -2.0       -1.40E-06 -1.39E-05 -2.77E-05 -4.13E-05 -5.48E-05 -8.14E-05
+     0.0        6.84E-10  6.84E-08  2.74E-07  6.16E-07  1.10E-06  2.46E-06
+     2.0        1.40E-06  1.40E-05  2.82E-05  4.25E-05  5.70E-05  8.63E-05
+     4.0        2.79E-06  2.80E-05  5.62E-05  8.44E-05  1.13E-04  1.70E-04
+     8.0        5.59E-06  5.59E-05  1.12E-04  1.68E-04  2.25E-04  3.38E-04
+    12.0        8.39E-06  8.39E-05  1.68E-04  2.52E-04  3.36E-04  5.05E-04
+    16.0        1.12E-05  1.12E-04  2.24E-04  3.36E-04  4.48E-04  6.73E-04
+    20.0        1.40E-05  1.40E-04  2.80E-04  4.20E-04  5.60E-04  8.41E-04
+    24.0        1.68E-05  1.68E-04  3.36E-04  5.04E-04  6.72E-04  1.01E-03
+0***NDM PRINTED WHEN NO DATCOM METHODS EXIST
+1          THE FOLLOWING IS A LIST OF ALL INPUT CARDS FOR THIS CASE.
+0
+1 END OF JOB.

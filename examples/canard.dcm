@@ -1,0 +1,78 @@
+ $FLTCON NMACH=1.0,MACH(1)=0.60,NALPHA=11.,
+  ALSCHD(1)=-6.0,-4.0,-2.0,0.0,2.0,
+  4.0,8.0,12.0,16.0,20.0,24.0,RNNUB(1)=4.28E6$                        
+ $OPTINS SREF=8.85,CBARR=2.46,BLREF=4.28$                                       
+ $SYNTHS XCG=4.14,ZCG=-0.20$                                                    
+ $BODY NX=10.0,                                                                 
+  X(1)=0.0,0.258,0.589,1.26,2.26,2.59,2.93,3.59,4.57,6.26,                      
+  S(1)=0.0,0.080,0.160,0.323,0.751,0.883,0.939,1.032,1.032,1.032,               
+  P(1)=0.0,1.00,1.42,2.01,3.08,3.34,3.44,3.61,3.61,3.61,                        
+  R(1)=0.0,.186,.286,.424,.533,.533,.533,.533,.533,.533$                        
+ $BODY BNOSE=1.,BLN=2.59,BLA=3.67$                                              
+*DUMP CASE                                                                       
+ $BODY ZU(1)=-.595,-.476,-.372,-.138,0.200,.334,.343,.343,.343,.343,            
+       ZL(1)=-.595,-.715,-.754,-.805,-.868,-.868,-.868,-.868,-.868,-.868$       
+ $FLTCON NMACH=3.0,MACH(1)=0.90,1.40,2.5,RNNUB(1)=6.4E6,9.96E6,17.8E6$          
+ $FLTCON NMACH=1.0,MACH(1)=2.5,RNNUB(1)=17.86E6,HYPERS=.TRUE.$                  
+ $BODY DS=0.0$                                                                  
+ $FLTCON NMACH=4.0,MACH(1)=0.60,0.90,1.40,2.50,LOOP=1.,NALT=4.0,                
+  ALT(1)=0.,2000.,40000.,90000.,HYPERS=.FALSE.,                                 
+  NALPHA=11.,ALSCHD(1)=-6.0,-4.0,-2.0,0.0,2.0,4.0,8.0,12.0,16.0,20.0,24.0$      
+ $OPTINS SREF=8.85,CBARR=2.46,BLREF=4.28$                                       
+ $SYNTHS XW=3.61,ZW=-.80,ALIW=2.0,XCG=4.14$                                     
+ $WGPLNF CHRDTP=0.64,SSPNE=1.59,SSPN=1.59,CHRDR=2.90,SAVSI=55.0,CHSTAT=0.0,     
+  TWISTA=0.0,SSPNDD=0.0,DHDADI=0.0,DHDADO=0.0,TYPE=1.0$                         
+ $WGSCHR DELTAY=2.85,XOVC=0.40,CLI=0.127,ALPHAI=0.123,CLALPA(1)=.1335,          
+  TOVC=0.11,CLMAXL=1.55,                                                        
+  CLMAX(1)=1.195,CMO=-.0262,LERI=.0134,CAMBER=.TRUE.,CLAMO=.105,TCEFF=0.055$    
+*DUMP A                                                                          
+ $FLTCON NMACH=2.0,MACH(1)=0.60,2.5,LOOP=2.,NALT=2.,ALT(1)=0.,90000.$           
+ $SYNTHS XW=2.497,ZW=-.71$                                                      
+ $WGPLNF SSPNOP=1.11,CHRDBP=2.24,CHRDR=4.01,SAVSI=75.1,SAVSO=55.0,TYPE=3.0$     
+ $WGSCHR TOVC=.10,LERI=0.011,LERO=.0158,TOVCO=0.12,XOVCO=0.40,CMOT=-.0262$      
+ $FLTCON LOOP=3.$                                                               
+ $WGPLNF TYPE=2.0$                                                              
+*BUILD                                                                           
+ $FLTCON NMACH=2.0,MACH(1)=.60,.80,NALPHA=9.0,ALSCHD(1)=-2.0,0.0,2.0,           
+  4.0,8.0,12.0,16.0,20.0,24.0,RNNUB(1)=2.28E6,3.04E6$                           
+ $FLTCON NMACH=3.0,MACH(1)=0.60,0.80,1.5,RNNUB(1)=4.26E6,6.4E6,                 
+  9.96E6,$                                                                      
+ $OPTINS SREF=2.25,CBARR=0.822,BLREF=3.00$                                      
+ $SYNTHS XCG=2.60,ZCG=0.0,XW=1.70,ZW=0.0,ALIW=0.0,XH=3.93,                      
+  ZH=0.0,ALIH=0.0,XV=3.34,VERTUP=.TRUE.$                                        
+ $BODY NX=10.0,BNOSE=2.0,BTAIL=1.0,BLN=1.46,BLA=1.97,                           
+  X(1)=0.0,.175,.322,.530,.850,1.460,2.50,3.43,3.97,4.57,                       
+  S(1)=0.0,.00547,.0220,.0491,.0872,.136,.136,.136,.0993,.0598,                 
+  P(1)=0.0,.262,.523,.785,1.04,1.305,1.305,1.305,1.12,.866,                     
+  R(1)=0.0,.0417,.0833,.125,.1665,.208,.208,.208,.178,.138$                     
+ $WGPLNF CHRDTP=0.346,SSPNE=1.29,SSPN=1.50,CHRDR=1.16,SAVSI=45.0,CHSTAT=0.25,   
+  TWISTA=0.0,SSPNDD=0.0,DHDADI=0.0,DHDADO=0.0,TYPE=1.0$                         
+ $WGSCHR TOVC=.060,DELTAY=1.30,XOVC=0.40,CLI=0.0,ALPHAI=0.0,CLALPA(1)=0.131,    
+  CLMAX(1)=.82,CMO=0.0,LERI=.0025,CLAMO=.105,YCM=0.0,                           
+  SLOPE(1)=70.7,2.7,0.0,-2.5,-3.8,-4.0$                                         
+ $FLTCON NMACH=1.0,MACH(1)=0.60,NALPHA=5.,ALSCHD(1)=0.0,5.0,10.0,15.0,20.0,     
+  RNNUB(1)=3.1E6$                                                               
+ $OPTINS SREF=694.2,CBARR=18.07,BLREF=45.6$                                     
+ $SYNTHS XCG=36.68,ZCG=0.0$                                                     
+ $BODY NX=19.0,BNOSE=2.0,BTAIL=2.0,BLN=30.0,BLA=0.0,                            
+  X(1)=0.0,2.01,5.49,8.975,12.47,15.97,19.47,22.89,26.49,30.0,33.51,37.02,      
+   40.53,44.03,47.53,51.02,54.52,57.99,60.0,                                    
+  S(1)=0.0,2.89,7.42,11.32,14.64,17.36,19.49,21.0,21.91,22.20,21.90,            
+   21.0,19.49,17.36,14.64,12.33,7.42,2.89,0.0,                                  
+  P(1)=0.0,1.84,4.72,7.21,9.32,11.05,12.41,13.36,13.94,14.14,13.94,             
+   13.36,12.41,11.05,9.32,7.21,4.72,1.84,0.0,                                   
+  R(1)=0.0,.293,.752,1.15,1.48,1.76,1.97,2.13,2.22,2.25,2.22,2.13,1.97,1.76,    
+   1.48,1.15,.752,.293,0.0,$                                                    
+NACA-W-6-65A004                                                                 
+NACA-H-6-65A004                                                                 
+ $WGPLNF CHSTAT=0.0,                                                            
+  TWISTA=0.0,SSPNDD=0.0,DHDADI=0.0,DHDADO=0.0,TYPE=1.0$                         
+ $SYNTHS XW=8.064,ZW=0.0,ALIW=0.0$                                              
+ $WGPLNF CHRDTP=0.0,SSPNE=6.205,SSPN=8.01,CHRDR=13.87,SAVSI=60.0$               
+ $SYNTHS XH=29.42,ZH=0.0,ALIH=0.0$                                              
+ $HTPLNF SSPNE=21.34,SSPN=22.82,CHRDR=26.62,SAVSI=38.52,CHSTAT=0.0,             
+  CHRDTP=3.80,                                                                  
+  TWISTA=0.0,SSPNDD=0.0,DHDADI=0.0,DHDADO=0.0,TYPE=1.0,SHB(1)=73.5,             
+  SEXT(1)=73.5,RLPH(1)=47.3$                                                    
+CASEID BODY PLUS WING PLUS CANARD, EXAMPLE PROBLEM 4, CASE 1                    
+NEXT CASE                                                                       

@@ -1,0 +1,12 @@
+To extract the executables and store them in their proper local (/usr/local/bin), 
+just type:
+
+	tar xvzPf datcom_bin.tz
+
+If you don't have access to /usr/local/bin or don't have the root password, 
+you will have to extract these files with:
+
+	tar xvzpf datcom_bin.tz
+
+(note the lower case "p"), which will extract these files to your local directory, 
+in /usr/local/bin, and you will have to put these files somewhere in your path.

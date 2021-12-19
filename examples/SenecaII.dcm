@@ -1,0 +1,73 @@
+*
+*   File : SenecaII.dat
+*   Aircraft : PA34-200T Seneca II
+*   Author: Torsten Dreyer, with help from Bill Galbraith
+*   Note: JSBSim exists. See FlightGear.org download section
+*
+*   My thanks to Torsten for allowing me to distribute his model,
+*   and for helping me debug DATCOM.  Bill
+*
+
+NACA W 5 65415
+NACA V 4 0009
+NACA H 4 0009
+NACA F 4 0009
+
+ $FLTCON NMACH=1.0, 
+         MACH(1)=0.2418852, 
+         NALPHA=20.0, 
+         ALSCHD(1)= -8.0, -6.0, -4.0, -2.0,  0.0, 
+                     2.0,  3.0,  4.0,  5.0,  6.0, 
+                     7.0,  8.0,  9.0,  10.0, 11.0, 
+                    12.0, 14.0, 16.0, 18.0, 20.0,
+         NALT=3.0, 
+         ALT(1)=0.0, 10000.0, 20000.0,
+         STMACH=0.6,
+         TSMACH=1.4,
+         TR=1.0,
+*         WT=4500.0,		Removed for compatibility with Matlab
+         LOOP=1.0$
+
+ $OPTINS ROUGFC=0.30E-3,
+         SREF=208.7, CBARR=5.18, BLREF=38.906$
+
+ $SYNTHS XCG=9.46, ZCG=0.0,
+         XW=6.73, ZW=2.49, ALIW=3.7,
+         XH=24.9, ZH=4.17, ALIH=0.0, HINAX=25.9,
+         VERTUP=.TRUE., SCALE=1.0,
+
+* Changed by WAG, guesses only
+*        XV=20.0, ZV=0.0,
+*        XVF=25.1,ZVF=4.0$
+         XV=20.0, ZV=4.0,
+         XVF=19.5,ZVF=5.0$
+
+
+ $BODY   NX=6.0,
+         X(1) =0.0,  1.54, 6.56, 9.25, 15.7,  26.6,
+         R(1) =0.0,  0.98, 2.03, 2.03,  2.03,  0.0,
+         ZU(1)=3.61, 4.49, 5.31, 6.43,  5.64,  4.63,
+         ZL(1)=3.61, 2.82, 2.46, 2.23,  2.07,  3.58,
+         ITYPE=1.0, METHOD=1.0$
+
+ $WGPLNF CHRDTP=5.41, SSPNOP=14.8, SSPNE=17.5, SSPN=19.4,
+         CHRDBP=5.42, CHRDR=7.36, SAVSI=25.0, CHSTAT=0.0,
+         TWISTA=-3.0, DHDADI=7.0, DHDADO=7.0, TYPE=1.0$
+
+ $VTPLNF CHRDTP=2.62, SSPNE=4.92, SSPN=6.23, CHRDR=6.56,
+         SAVSI=39.8, CHSTAT=0.0, TYPE=1.0$
+
+ $VFPLNF CHRDTP=0.0, SSPNE=0.75, SSPN=2.39, CHRDR=5.31,
+         SAVSI=66.5, CHSTAT=0.0, TYPE=1.0$
+
+ $HTPLNF CHRDTP=2.89, SSPNE=6.16, SSPN=6.76, CHRDR=2.89,
+         SAVSI=0.0, CHSTAT=0.0, TWISTA=0.0, DHDADI=0.0,
+         TYPE=1.0$
+
+
+* All of these values are guesses ..... Bill
+ $PROPWR AIETLP=0.0,NENGSP=2.0,THSTCP=0.0, 
+         PHALOC=4.5,PHVLOC=4.0,PRPRAD=3.75, 
+         ENGFCT=0.8,NOPBPE=3.0,
+         YP=6.0,CROT=.FALSE.$
+

@@ -1,0 +1,61 @@
+*
+*   Glider-qiao2
+*
+
+DIM CM
+DERIV DEG
+
+DAMP
+PART
+
+ $FLTCON WT=1.5, LOOP=2.0,
+         NMACH=1.0,
+         MACH(1)=0.1,
+         NALT=1.0,
+         ALT(1)=100.0,
+         NALPHA=20.00,
+         ALSCHD(1)=-8.00, -6.00, -4.00, -2.00,  0.00,  2.00,  4.00,  
+         6.00,  8.00, 10.00, 12.00, 14.00, 16.00, 18.00, 20.00, 22.00, 
+         24.00, 26.00, 28.00, 30.00,
+         STMACH=0.60, TSMACH=1.40, TR=1.00$
+
+ $OPTINS SREF=3770.92, CBARR=10.00, BLREF=189.00, ROUGFC=0.25E-3$
+
+ $SYNTHS XCG=27.00, ZCG=-3.20,
+         XW=27.00, ZW=4.90, ALIW=0.00,
+         XH=65.00, ZH=-4.00, ALIH=0.00,
+         XV=65.00, ZV=4.90,
+         XVF=0.00, ZVF=0.00$
+
+ $BODY   NX=8.00,
+         X(1)=0.0,  6.1,  6.5,  6.8,  7.7, 22.5, 71.1, 77.2,
+         R(1)=0.0, 4.6, 4.6, 4.6, 4.6, 4.6, 4.6, 0.0,
+         ZU(1)=0.0, 4.9, 4.9, 4.9, 4.9, 4.9, 4.9, 0.0,
+         ZL(1)=0.0, -4.9, -4.9, -4.9, -4.9, -4.9, -4.9,  0.0,
+         BNOSE=1.00, BLN=6.10, BTAIL=6.10, BLA=65.00,
+         ITYPE=1.00$
+
+ $WGPLNF CHRDR=10.00, CHRDTP=10.00,
+         SSPN=94.50, SSPNE=90.00,
+         SAVSI=1.00, CHSTAT=0.25, TWISTA=0.0,
+         DHDADI=0.00, TYPE=1.00$
+
+NACA W 4 4412
+
+SAVE
+
+ $HTPLNF CHRDR=5.00, CHRDTP=5.00,
+         SSPN=19.20, SSPNE=15.00,
+         SAVSI=1.00, CHSTAT=0.25, TWISTA=0.0,
+         DHDADI=0.00, TYPE=1.00$
+
+NACA H 4 0010
+
+ $VTPLNF CHRDR=4.30, CHRDTP=4.30,
+         SSPN=17.50, SSPNE=17.50,
+         SAVSI=0.00, CHSTAT=0.25,
+         TYPE=1.00$
+
+NACA V 4 0012
+
+CASEID TOTAL: Glider_qiao1

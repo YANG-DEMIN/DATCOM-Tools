@@ -1,0 +1,171 @@
+  ****************************************************
+  *    USAF STABILITY AND CONTROL  DIGITAL DATCOM    *
+  *    PROGRAM REV. JAN 96   DIRECT INQUIRIES TO:    *
+  *    WRIGHT LABORATORY  (WL/FIGC)  ATTN: W. BLAKE  *
+  *      WRIGHT PATTERSON AFB, OHIO  45433           *
+  *    PHONE (513) 255-6764,   FAX (513) 258-4054    *
+  ****************************************************
+1                         CONERR - INPUT ERROR CHECKING
+0 ERROR CODES - N* DENOTES THE NUMBER OF OCCURENCES OF EACH ERROR
+0 A - UNKNOWN VARIABLE NAME
+0 B - MISSING EQUAL SIGN FOLLOWING VARIABLE NAME
+0 C - NON-ARRAY VARIABLE HAS AN ARRAY ELEMENT DESIGNATION - (N)
+0 D - NON-ARRAY VARIABLE HAS MULTIPLE VALUES ASSIGNED
+0 E - ASSIGNED VALUES EXCEED ARRAY DIMENSION
+0 F - SYNTAX ERROR
+
+0******************************  INPUT DATA CARDS  ******************************
+
+  $FLTCON  NALPHA=9.0, ALSCHD=-2.0,0.0,2.0,4.0,8.0,12.0,16.0,20.0,24.0$          
+  $FLTCON  NMACH=1.0, MACH(1)=0.6, RNNUB(1)=4.26E6$                              
+  $OPTINS SREF=2.25, CBARR=0.822, BLREF=3.00$                                    
+  $SYNTHS XCG=2.60, ZCG=0.0, XW=1.70, ZW=0.0, ALIW=0.0$                          
+  $BODY NX=10.0, BNOSE=2.0, BTAIL=1.0, BLN=1.46, BLA=1.97,                       
+    X(1)=0.0, .175,.322,.530,.850,1.46,2.5,3.43,3.97,4.57,                       
+    R(1)=0.0, .0417,.0833,.125,.1665,.208,.208,.208,.178,.138$                   
+  $WGPLNF CHRDTP=0.346, SSPNE=1.29, SSPN=1.5, CHRDR=1.16, SAVSI=45.0,            
+    CHSTAT=0.25, SWAFP=0.0, TWISTA=0.0, SSPNDD=0.0,                              
+    DHDADI=0.0, DHDADO=0.0, TYPE=1.0$                                            
+  $WGSCHR TOVC=.06, DELTAY=1.3, XOVC=0.4, CLI=0.0, ALPHAI=0.0,                   
+    CLALPA(1)=0.131, CLMAX(1)=.82, CMO=0.0, LERI=.0025, CLAMO=.105$              
+  $ASYFLP NDELTA=5.0, DELTAL(1)=5.,10.,20.,30.,40.,                              
+                      DELTAR(1)=-2.,-5.,-10.,-15.,-20.,                          
+          STYPE=4.0, CHRDFI=.1116, CHRDFO=.0692,                                 
+          SPANFI=1.109, SPANFO=1.5, PHETE=.0522$                                 
+ CASEID PLAIN FLAP AILERON, EXAMPLE PROBLEM 6, CASE 1                            
+ SAVE                                                                            
+ NEXT CASE                                                                       
+  $ASYFLP STYPE=3.0, DELTAD(1)=.0130,.0261,.0380,.0513,.0630,.0750,              
+    DELTAS(1)=.013, .0261, .038, .0513, .0630, .0750,                            
+    XSOC(1)=.6980,.6955,.6880,.6638,.6456,.6250,                                 
+    XSPRME=0.55,                                                                 
+    XSOC(1)=0.0357,0.0710,0.0956,0.1182,0.1365,0.1359$                           
+ CASEID SPOILER-SLOT-DEFLECTOR ON WING, EXAMPLE PROBLEM 6, CASE 2                
+ NEXT CASE                                                                       
+1          THE FOLLOWING IS A LIST OF ALL INPUT CARDS FOR THIS CASE.
+0
+  $FLTCON  NALPHA=9.0, ALSCHD=-2.0,0.0,2.0,4.0,8.0,12.0,16.0,20.0,24.0$          
+  $FLTCON  NMACH=1.0, MACH(1)=0.6, RNNUB(1)=4.26E6$                              
+  $OPTINS SREF=2.25, CBARR=0.822, BLREF=3.00$                                    
+  $SYNTHS XCG=2.60, ZCG=0.0, XW=1.70, ZW=0.0, ALIW=0.0$                          
+  $BODY NX=10.0, BNOSE=2.0, BTAIL=1.0, BLN=1.46, BLA=1.97,                       
+    X(1)=0.0, .175,.322,.530,.850,1.46,2.5,3.43,3.97,4.57,                       
+    R(1)=0.0, .0417,.0833,.125,.1665,.208,.208,.208,.178,.138$                   
+  $WGPLNF CHRDTP=0.346, SSPNE=1.29, SSPN=1.5, CHRDR=1.16, SAVSI=45.0,            
+    CHSTAT=0.25, SWAFP=0.0, TWISTA=0.0, SSPNDD=0.0,                              
+    DHDADI=0.0, DHDADO=0.0, TYPE=1.0$                                            
+  $WGSCHR TOVC=.06, DELTAY=1.3, XOVC=0.4, CLI=0.0, ALPHAI=0.0,                   
+    CLALPA(1)=0.131, CLMAX(1)=.82, CMO=0.0, LERI=.0025, CLAMO=.105$              
+  $ASYFLP NDELTA=5.0, DELTAL(1)=5.,10.,20.,30.,40.,                              
+                      DELTAR(1)=-2.,-5.,-10.,-15.,-20.,                          
+          STYPE=4.0, CHRDFI=.1116, CHRDFO=.0692,                                 
+          SPANFI=1.109, SPANFO=1.5, PHETE=.0522$                                 
+ CASEID PLAIN FLAP AILERON, EXAMPLE PROBLEM 6, CASE 1                            
+ SAVE                                                                            
+ NEXT CASE                                                                       
+0 INPUT DIMENSIONS ARE IN FT, SCALE FACTOR IS 1.0000
+
+1                               AUTOMATED STABILITY AND CONTROL METHODS PER APRIL 1976 VERSION OF DATCOM
+                                         CHARACTERISTICS AT ANGLE OF ATTACK AND IN SIDESLIP
+                                                       WING-BODY CONFIGURATION
+                                           PLAIN FLAP AILERON, EXAMPLE PROBLEM 6, CASE 1
+ 
+ -----------------------  FLIGHT CONDITIONS  ------------------------           --------------  REFERENCE DIMENSIONS  ------------
+  MACH    ALTITUDE   VELOCITY    PRESSURE    TEMPERATURE     REYNOLDS             REF.      REFERENCE LENGTH   MOMENT REF. CENTER
+ NUMBER                                                       NUMBER              AREA       LONG.     LAT.     HORIZ      VERT
+             FT       FT/SEC     LB/FT**2       DEG R         1/FT               FT**2        FT        FT        FT        FT
+0 0.600                                                    4.2600E+06             2.250      0.822     3.000     2.600     0.000
+0                                                               -------------------DERIVATIVE (PER DEGREE)-------------------
+0 ALPHA     CD       CL       CM       CN       CA       XCP        CLA          CMA          CYB          CNB          CLB
+0
+   -2.0    0.016   -0.125    0.0032  -0.126    0.012   -0.026    6.258E-02   -1.352E-03   -1.612E-03   -1.845E-03    5.509E-04
+    0.0    0.015    0.000    0.0000   0.000    0.015   ******    6.258E-02   -1.864E-03                             -5.244E-12
+    2.0    0.016    0.125   -0.0042   0.126    0.012   -0.034    6.273E-02   -2.646E-03                             -5.509E-04
+    4.0    0.024    0.251   -0.0106   0.252    0.006   -0.042    6.269E-02   -3.674E-03                             -1.104E-03
+    8.0    0.067    0.500   -0.0293   0.505   -0.003   -0.058    6.082E-02   -4.565E-03                             -2.201E-03
+   12.0    0.149    0.738   -0.0471   0.752   -0.007   -0.063    5.089E-02   -3.125E-03                             -3.246E-03
+   16.0    0.236    0.907   -0.0543   0.937   -0.023   -0.058    3.176E-02   -1.423E-03                             -3.993E-03
+   20.0             0.992   -0.0585                              9.201E-03   -1.326E-04                             -4.364E-03
+   24.0             0.981   -0.0554                             -1.458E-02    1.698E-03                             -4.317E-03
+1                            AUTOMATED STABILITY AND CONTROL METHODS PER APRIL 1976 VERSION OF DATCOM
+                                         CHARACTERISTICS OF HIGH LIFT AND CONTROL DEVICES
+                                            WING PLAIN TRAILING-EDGE FLAP CONFIGURATION
+                                           PLAIN FLAP AILERON, EXAMPLE PROBLEM 6, CASE 1
+ -----------------------  FLIGHT CONDITIONS  ------------------------           --------------  REFERENCE DIMENSIONS  ------------
+  MACH    ALTITUDE   VELOCITY    PRESSURE    TEMPERATURE     REYNOLDS             REF.      REFERENCE LENGTH   MOMENT REF. CENTER
+ NUMBER                                                       NUMBER              AREA       LONG.     LAT.     HORIZ      VERT
+             FT       FT/SEC     LB/FT**2       DEG R         1/FT               FT**2        FT        FT        FT        FT
+0 0.600                                                    4.2600E+06             2.250      0.822     3.000     2.600     0.000
+0                           ----------YAWING MOMENT COEFFICIENT,CN,DUE TO CONTROL DEFLECTION----------
+0(DELTAL-DELTAR)=  7.0        15.0        30.0        45.0        60.0
+0ALPHA
+0
+  -2.0         6.236E-05   1.336E-04   2.441E-04   3.106E-04   3.670E-04
+   0.0         0.000E+00   0.000E+00   0.000E+00   0.000E+00   0.000E+00
+   2.0        -6.236E-05  -1.336E-04  -2.441E-04  -3.106E-04  -3.670E-04
+   4.0        -1.249E-04  -2.677E-04  -4.890E-04  -6.223E-04  -7.353E-04
+   8.0        -2.485E-04  -5.326E-04  -9.728E-04  -1.238E-03  -1.463E-03
+  12.0        -3.666E-04  -7.855E-04  -1.435E-03  -1.826E-03  -2.158E-03
+  16.0        -4.530E-04  -9.708E-04  -1.773E-03  -2.257E-03  -2.666E-03
+  20.0        -4.972E-04  -1.065E-03  -1.946E-03  -2.476E-03  -2.926E-03
+  24.0        -4.908E-04  -1.052E-03  -1.921E-03  -2.445E-03  -2.889E-03
+0
+0                                            DELTAL          DELTAR          (CL)ROLL
+0
+                                               5.0            -2.0            2.8633E-03
+                                              10.0            -5.0            6.1357E-03
+                                              20.0           -10.0            1.1208E-02
+                                              30.0           -15.0            1.4262E-02
+                                              40.0           -20.0            1.6853E-02
+1          THE FOLLOWING IS A LIST OF ALL INPUT CARDS FOR THIS CASE.
+0
+  $ASYFLP STYPE=3.0, DELTAD(1)=.0130,.0261,.0380,.0513,.0630,.0750,              
+    DELTAS(1)=.013, .0261, .038, .0513, .0630, .0750,                            
+    XSOC(1)=.6980,.6955,.6880,.6638,.6456,.6250,                                 
+    XSPRME=0.55,                                                                 
+    XSOC(1)=0.0357,0.0710,0.0956,0.1182,0.1365,0.1359$                           
+ CASEID SPOILER-SLOT-DEFLECTOR ON WING, EXAMPLE PROBLEM 6, CASE 2                
+ NEXT CASE                                                                       
+0 INPUT DIMENSIONS ARE IN FT, SCALE FACTOR IS 1.0000
+
+1                               AUTOMATED STABILITY AND CONTROL METHODS PER APRIL 1976 VERSION OF DATCOM
+                                         CHARACTERISTICS AT ANGLE OF ATTACK AND IN SIDESLIP
+                                                       WING-BODY CONFIGURATION
+                                     SPOILER-SLOT-DEFLECTOR ON WING, EXAMPLE PROBLEM 6, CASE 2
+ 
+ -----------------------  FLIGHT CONDITIONS  ------------------------           --------------  REFERENCE DIMENSIONS  ------------
+  MACH    ALTITUDE   VELOCITY    PRESSURE    TEMPERATURE     REYNOLDS             REF.      REFERENCE LENGTH   MOMENT REF. CENTER
+ NUMBER                                                       NUMBER              AREA       LONG.     LAT.     HORIZ      VERT
+             FT       FT/SEC     LB/FT**2       DEG R         1/FT               FT**2        FT        FT        FT        FT
+0 0.600                                                    4.2600E+06             2.250      0.822     3.000     2.600     0.000
+0                                                               -------------------DERIVATIVE (PER DEGREE)-------------------
+0 ALPHA     CD       CL       CM       CN       CA       XCP        CLA          CMA          CYB          CNB          CLB
+0
+   -2.0    0.016   -0.125    0.0032  -0.126    0.012   -0.026    6.258E-02   -1.352E-03   -1.612E-03   -1.845E-03    5.509E-04
+    0.0    0.015    0.000    0.0000   0.000    0.015   ******    6.258E-02   -1.864E-03                             -5.244E-12
+    2.0    0.016    0.125   -0.0042   0.126    0.012   -0.034    6.273E-02   -2.646E-03                             -5.509E-04
+    4.0    0.024    0.251   -0.0106   0.252    0.006   -0.042    6.269E-02   -3.674E-03                             -1.104E-03
+    8.0    0.067    0.500   -0.0293   0.505   -0.003   -0.058    6.082E-02   -4.565E-03                             -2.201E-03
+   12.0    0.149    0.738   -0.0471   0.752   -0.007   -0.063    5.089E-02   -3.125E-03                             -3.246E-03
+   16.0    0.236    0.907   -0.0543   0.937   -0.023   -0.058    3.176E-02   -1.423E-03                             -3.993E-03
+   20.0             0.992   -0.0585                              9.201E-03   -1.326E-04                             -4.364E-03
+   24.0             0.981   -0.0554                             -1.458E-02    1.698E-03                             -4.317E-03
+1                            AUTOMATED STABILITY AND CONTROL METHODS PER APRIL 1976 VERSION OF DATCOM
+                                         CHARACTERISTICS OF HIGH LIFT AND CONTROL DEVICES
+                                          WING WITH SPOILER-SLOT-DEFLECTOR CONFIGURATION
+                                     SPOILER-SLOT-DEFLECTOR ON WING, EXAMPLE PROBLEM 6, CASE 2
+ -----------------------  FLIGHT CONDITIONS  ------------------------           --------------  REFERENCE DIMENSIONS  ------------
+  MACH    ALTITUDE   VELOCITY    PRESSURE    TEMPERATURE     REYNOLDS             REF.      REFERENCE LENGTH   MOMENT REF. CENTER
+ NUMBER                                                       NUMBER              AREA       LONG.     LAT.     HORIZ      VERT
+             FT       FT/SEC     LB/FT**2       DEG R         1/FT               FT**2        FT        FT        FT        FT
+0 0.600                                                    4.2600E+06             2.250      0.822     3.000     2.600     0.000
+0                             XS/C        HS/C        DD/C        DS/C        (CL)ROLL          CN
+0
+                             0.0357      0.0000      0.0130      0.0130      3.2568E-04      8.395E-04
+                             0.0710      0.0000      0.0261      0.0261      3.2568E-04      1.685E-03
+                             0.0956      0.0000      0.0380      0.0380      3.2568E-04      2.454E-03
+                             0.1182      0.0000      0.0513      0.0513      3.2568E-04      3.313E-03
+                             0.1365      0.0000      0.0630      0.0630      3.2568E-04      4.068E-03
+1          THE FOLLOWING IS A LIST OF ALL INPUT CARDS FOR THIS CASE.
+0
+1 END OF JOB.

@@ -1,0 +1,273 @@
+<?xml version="1.0"?>
+
+
+<?xml-stylesheet type="text/xsl" href="http://jsbsim.sourceforge.net/JSBSim.xsl"?>
+<fdm_config name="unknown" release="BETA" version="2.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
+
+
+
+<!-- 
+   This XML file is incomplete, since DATCOM+ doesn't know 
+   enough to fill in all the values. It has filled in 
+   that it knows, though. You can build this part of the 
+   XML specification once, as it links in the aero part, 
+   which is the stuff that is going to change.
+
+   Search for 'unknown' and replace with real values before loading in JSBSim.
+-->
+
+   <fileheader>
+      <author>DATCOM+</author>
+      <filecreationdate> 12/18/21  23:05 </filecreationdate>
+      <description>DATCOM model for a unknown</description>
+      <version>  </version>
+      <reference refID="None" author="n/a" title="n/a" date="n/a"/>
+      <description>  </description>
+   </fileheader>
+
+
+
+
+
+
+
+
+<!-- **********************************************************************
+        METRICS
+     **********************************************************************
+-->
+
+
+   <metrics>
+      <wingarea unit="FT2">        1.0764  </wingarea>
+      <wingspan unit="FT">         2.2966  </wingspan>
+      <chord unit="FT">             .2297  </chord>
+      <htailarea unit="FT2">        .5274  </htailarea>
+      <htailarm unit="FT">         2.3066  </htailarm>
+      <vtailarea unit="FT2">        .1211  </vtailarea>
+      <vtailarm unit="FT">         2.3403  </vtailarm>
+      <location name="AERORP" unit="IN">
+         <x> 43.2 </x>   FIX THIS
+         <y>  0.0 </y>   FIX THIS
+         <z> 59.4 </z>   FIX THIS
+      </location>
+      <location name="EYEPOINT" unit="IN">
+         <x> 37.0 </x>   FIX THIS
+         <y>  0.0 </y>   FIX THIS
+         <z> 48.0 </z>   FIX THIS
+      </location>
+      <location name="VRP" unit="IN">
+         <x> 42.6 </x>   FIX THIS
+         <y>  0.0 </y>   FIX THIS
+         <z> 38.5 </z>   FIX THIS
+      </location>
+   </metrics>
+
+
+
+
+<!-- **********************************************************************
+        MASS_BALANCE
+     **********************************************************************
+-->
+
+
+   <mass_balance>
+      <ixx unit="SLUG*FT2"> UNKNOWN </ixx>
+      <iyy unit="SLUG*FT2"> UNKNOWN </iyy>
+      <izz unit="SLUG*FT2"> UNKNOWN </izz>
+      <ixz unit="SLUG*FT2"> UNKNOWN </ixz>
+      <emptywt unit="LBS">          .0000  </emptywt>    FIX THIS
+      <location name="CG" unit="IN">
+            <x>    13.78  </x>
+            <y>      .00  </y>
+            <z>      .00  </z>
+      </location>
+      <pointmass name="PILOT">
+         <weight unit="LBS"> 200.0 </weight>
+         <location name="POINTMASS" unit="IN">
+            <x> UNKNOWN </x>
+            <y> UNKNOWN </y>
+            <z> UNKNOWN </z>
+         </location>
+      </pointmass>
+      <pointmass name="CO-PILOT">
+         <weight unit="LBS"> 200.0 </weight>
+         <location name="POINTMASS" unit="IN">
+            <x> UNKNOWN </x>
+            <y> UNKNOWN </y>
+            <z> UNKNOWN </z>
+         </location>
+      </pointmass>
+      <pointmass name="LUGGAGE">
+         <weight unit="LBS"> 0.0 </weight>
+         <location name="POINTMASS" unit="IN">
+            <x> UNKNOWN </x>
+            <y> UNKNOWN </y>
+            <z> UNKNOWN </z>
+         </location>
+      </pointmass>
+   </mass_balance>
+
+
+
+
+<!-- **********************************************************************
+        UNDERCARRIAGE
+     **********************************************************************
+-->
+
+
+<!--
+
+   DATCOM does not calculate ground reactions parameters.
+
+-->
+
+
+   <ground_reactions>
+
+   </ground_reactions>
+
+
+
+
+<!-- **********************************************************************
+        PROPULSION
+     **********************************************************************
+-->
+
+
+   <propulsion>
+
+      <tank type="FUEL">   <!-- Tank Number 0 -->
+         <location unit="IN">
+           <x>      unknown  </x>
+           <y>      unknown  </y>
+           <z>      unknown  </z>
+         </location>
+         <radius unit="IN">    UNKNOWN </radius>
+         <capacity unit="LBS"> UNKNOWN </capacity>
+         <contents unit="LBS"> UNKNOWN </contents>
+      </tank>
+
+      <tank type="FUEL">   <!-- Tank Number 1 -->
+         <location unit="IN">
+           <x>      unknown  </x>
+           <y>      unknown  </y>
+           <z>      unknown  </z>
+         </location>
+         <radius unit="IN">    UNKNOWN </radius>
+         <capacity unit="LBS"> UNKNOWN </capacity>
+         <contents unit="LBS"> UNKNOWN </contents>
+      </tank>
+
+   </propulsion>
+
+
+
+
+<!-- **********************************************************************
+        AUTOPILOT
+     **********************************************************************
+-->
+
+
+   <!-- Autopilot is not a required section, and DATCOM does not calculate this -->
+
+
+
+
+<!-- **********************************************************************
+        FLIGHT CONTROLS
+     **********************************************************************
+-->
+
+
+   <!-- DATCOM does not calculate the flight control section -->
+   <flight_control>
+
+   </flight_control>
+
+
+
+
+<!-- **********************************************************************
+        AERODYNAMICS
+     **********************************************************************
+-->
+
+
+
+
+   <!-- Link to the aerodynamics file -->
+
+   <aerodynamics file="datcom_aero.xml"/>
+
+
+
+<!-- ********************************************************************** -->
+
+
+
+
+
+<!--
+   OUTPUT section definition
+
+   The following specifies the way that JSBSim writes out data
+
+   NAME is the filename you want the output to go to
+
+   TYPE can be:
+
+      CSV       Comma separated data. If a filename is supplied then the data
+                goes to that file. If COUT or cout is specified, the data
+                goes to stdout. If the filename is a null filename
+                the data goes to stdout, as well
+
+      SOCKET    Will eventually send data to a socket output, where NAME
+                would then be the IP address of the machine the data 
+                should be sent to. DON'T USE THIS YET!
+
+      TABULAR   Columnar data. 
+
+      TERMINAL  Output to terminal. NOT IMPLEMENTED YET!
+
+      NONE      Specifies to do nothing. This setting makes it easy to turn 
+                on and off the data output without having to mess with 
+                anything else.
+
+
+   NOTE that Time is always output with the data.
+
+-->
+
+
+
+   <output name="JSBout.rec" type="TABULAR" rate="20">
+      <simulation>       OFF </simulation>
+      <atmosphere>       ON  </atmosphere>
+      <atmosphere>       ON  </atmosphere>
+      <massprops>        ON  </massprops>
+      <aerosurfaces>     ON  </aerosurfaces>
+      <rates>            ON  </rates>
+      <velocities>       ON  </velocities>
+      <forces>           OFF </forces>
+      <moments>          OFF </moments>
+      <position>         ON  </position>
+      <coefficients>     OFF </coefficients>
+      <ground_reactions> OFF </ground_reactions>
+      <fcs>              ON  </fcs>
+      <propulsion>       OFF </propulsion>
+
+      <property>fcs/flap-pos-deg</property>
+
+   </output>
+
+
+
+</fdm_config>
+

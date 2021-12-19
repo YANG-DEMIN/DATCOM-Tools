@@ -1,0 +1,209 @@
+#! /bin/sh
+
+
+#  Written by Bill Galbraith, Holy Cows, Inc.  billg (at) holycows.net
+#
+#  This BASH script will take an input file name, either with
+#       datcom citation.dcm
+#  or
+#       datcom citation
+#  and run that file through the PREDAT program, which formats the
+#  input file for the Digital Datcom program DIGDAT. The output
+#  of DIGDAT is several files, which are renamed to significant file
+#  names, based on the input file name.
+
+
+echo " "
+echo "   DATCOM script ver 2.3"
+echo " "
+
+# Make sure the file is specified on the command line
+
+if [ $# = "0" ]
+then
+   echo " "
+   echo "   Specify the file on the command line"
+   echo " "
+   exit 1
+fi
+
+
+
+
+#if [ ! -f $1 ]
+#then
+#	echo
+#	echo "   No file exists: " $1
+#	echo
+#	echo
+#	exit
+#fi
+
+# Check to see if this file exists (.dcm is specified)
+if [ -f $1 ]
+then
+	echo "File is $1"
+
+	FILENAME=$1
+	#Build the base name of the file (no .dcm)
+	BASENAME=`expr $1 : '\(.*\)\.dcm'`
+	AEROBASENAME=`expr $1 : '\(.*\)\.dcm'`_aero
+
+# Otherwise, check to see if the file exists with .DCM extension
+elif [ -f $1.dcm ]
+then
+	BASENAME=$1
+	FILENAME=$BASENAME.dcm
+	AEROBASENAME=$BASENAME\_aero
+
+
+
+# Otherwise, the file doesn't exist
+else
+	echo
+	echo " No file exists: $1"
+	echo
+	echo
+	exit
+fi
+
+
+
+# Delete the old files
+
+rm -f for005.dat
+rm -f for006.dat
+rm -f for013.dat
+rm -f for014.dat
+rm -f fort.30
+rm -f $BASENAME.out
+rm -f $BASENAME.xml
+rm -f $BASENAME_aero.xml
+rm -f $BASENAME.lfi
+rm -f $BASENAME.ac
+rm -f $BASENAME.dat
+
+echo
+
+# Run the datcom_modeler program, as it is points out some errors
+echo "*============================================================================="
+echo "*  Main program for DATCOM-MODELER"
+echo "*"
+echo "*  Copyright (C) 2009  Anders Gidenstam (anders(at)gidenstam.org)"
+echo "*  Copyright (C) 2009  Ronald Jensen    (ron(at)jentronics.com)"
+echo "*  http://www.gidenstam.org"
+echo "*  http://www.jentronics.com"
+echo "*"
+echo "*  This program is free software; you can redistribute it and/or modify"
+echo "*  it under the terms of the GNU General Public License as published by"
+echo "*  the Free Software Foundation; either version 3 of the License, or"
+echo "*  (at your option) any later version."
+echo "*"
+echo "*  This program is distributed in the hope that it will be useful,"
+echo "*  but WITHOUT ANY WARRANTY; without even the implied warranty of"
+echo "*  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the"
+echo "*  GNU General Public License for more details."
+echo "*"
+   datcom-modeler -o $BASENAME\_1.ac $FILENAME
+echo
+
+
+# Run the DATCOM PREPROCESSOR to remove comment lines, inline comments,
+# and to structure multiple flap cases as required.
+echo    Running PREDAT
+   predat $FILENAME
+
+echo
+echo    Running Digital Datcom program DIGDAT 
+   digdat
+
+
+# Rename files from generic names to specific names.
+echo
+echo  Output files are : 
+	mv for006.dat $BASENAME.out
+	echo "    DATCOM-format data		$BASENAME.out"
+
+if [ -f fort.20 ] 
+then
+	mv fort.20 $BASENAME.dat
+	echo "    PRPLOT-format data		$BASENAME.dat"
+fi
+
+if [ -f fort.21 ] 
+then
+	mv fort.21 $BASENAME.h
+	echo "    LFI123-format data		$BASENAME.h"
+fi
+
+if [ -f fort.23 ] 
+then
+	mv fort.23 $BASENAME.lfi
+	echo "    LFIPLOT-format data		$BASENAME.lfi"
+else
+	echo "    No $BASENAME.lfi file was generated. Check $BASENAME.out for error messages."
+fi
+
+if [ -f datcom.xml ] 
+then
+	mv datcom.xml $BASENAME.xml
+	echo "    JSBSim-format data		$BASENAME.xml"
+else
+	echo "    No $BASENAME.xml file was generated. Check $BASENAME.out for error messages."
+fi
+
+if [ -f datcom_aero.xml ] 
+then
+	mv datcom_aero.xml $AEROBASENAME.xml
+	echo "    JSBSim-format aero data	$AEROBASENAME.xml"
+fi
+
+if [ -f fort.25 ] 
+then
+	mv fort.25 $BASENAME.ac
+	echo "    AC3D file			$BASENAME.ac"
+fi
+
+if [ -f fort.26 ] 
+then
+	mv fort.26 $BASENAME.csv
+	echo "    CSV file 			$BASENAME.csv"
+fi
+
+# Delete the remaining file and junk DATCOM output files.
+rm -f for008.dat for009.dat for010.dat for011.dat for012.dat for013.dat
+rm -f for014.dat
+
+echo
+
+
+
+if [ -f fort.30 ]
+then
+	echo
+	echo "    * DEBUG messages *		fort.30"
+fi
+
+if [ -f $BASENAME.ac ]
+then
+	echo
+	echo "To view the AC3D picture, type:  "
+	echo "   ac3dview $BASENAME.ac"
+fi
+
+echo
+echo
+if [ -f $AEROBASENAME.xml ]
+then
+	echo "Generate plots with"
+	echo "   jiff $AEROBASENAME.xml"
+	echo "or"
+	echo "   lfiplot $BASENAME.lfi"
+	echo
+fi
+echo
+echo
+
+ac3dview $BASENAME.ac
+#lfiplot  $BASENAME.lfi
+#more $AEROBASENAME.xml

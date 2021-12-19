@@ -1,0 +1,61 @@
+*
+*   Thin supersonic
+*
+
+DIM CM
+DERIV DEG
+
+DAMP
+PART
+
+ $FLTCON WT=2.5, LOOP=2.0,
+         NMACH=1.0,
+         MACH(1)=0.1,
+         NALT=1.0,
+         ALT(1)=100.0,
+         NALPHA=20.00,
+         ALSCHD(1)=-8.00, -6.00, -4.00, -2.00,  0.00,  2.00,  4.00,  
+         6.00,  8.00, 10.00, 12.00, 14.00, 16.00, 18.00, 20.00, 22.00, 
+         24.00, 26.00, 28.00, 30.00,
+         STMACH=0.60, TSMACH=1.40, TR=1.00$
+
+ $OPTINS SREF=608.72, CBARR=6.57, BLREF=92.65, ROUGFC=0.25E-3$
+
+ $SYNTHS XCG=31.00, ZCG=-3.20,
+         XW=7.50, ZW=-3.60, ALIW=0.00,
+         XH=50.00, ZH=-3.50, ALIH=0.00,
+         XV=53.00, ZV=4.00,
+         XVF=0.00, ZVF=0.00$
+
+ $BODY   NX=8.00,
+         X(1)=0.0,  1.0,  3.0,  5.7,  7.7, 22.5, 48.6, 60.0,
+         R(1)=0.0, 4.8, 4.8, 4.8, 4.5, 4.5, 4.5, 4.0,
+         ZU(1)=0.0, 4.8, 4.8, 4.8, 4.5, 4.5, 4.5, 4.0,
+         ZL(1)=0.0, -6.5, -6.5, -6.7, -4.5, -4.5, -4.5, -4.0,
+         BNOSE=1.00, BLN=5.70, BTAIL=11.40, BLA=42.90,
+         ITYPE=1.00$
+
+ $WGPLNF CHRDR=6.60, CHRDTP=6.50,
+         SSPN=23.00, SSPNE=18.50,
+         SAVSI=1.00, CHSTAT=0.25, TWISTA=0.0,
+         DHDADI=0.00, TYPE=1.00$
+
+NACA W 5 23018
+
+SAVE
+
+ $HTPLNF CHRDR=7.40, CHRDTP=7.40,
+         SSPN=19.00, SSPNE=16.00,
+         SAVSI=1.00, CHSTAT=0.25, TWISTA=0.0,
+         DHDADI=0.00, TYPE=1.00$
+
+NACA H 4 0010
+
+ $VTPLNF CHRDR=4.50, CHRDTP=2.80,
+         SSPN=14.00, SSPNE=12.00,
+         SAVSI=7.00, CHSTAT=0.25,
+         TYPE=1.00$
+
+NACA V 4 0012
+
+CASEID TOTAL: SwitchBlade

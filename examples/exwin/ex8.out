@@ -1,0 +1,148 @@
+  ****************************************************
+  *    USAF STABILITY AND CONTROL  DIGITAL DATCOM    *
+  *    PROGRAM REV. JAN 96   DIRECT INQUIRIES TO:    *
+  *    WRIGHT LABORATORY  (WL/FIGC)  ATTN: W. BLAKE  *
+  *      WRIGHT PATTERSON AFB, OHIO  45433           *
+  *    PHONE (513) 255-6764,   FAX (513) 258-4054    *
+  ****************************************************
+1                         CONERR - INPUT ERROR CHECKING
+0 ERROR CODES - N* DENOTES THE NUMBER OF OCCURENCES OF EACH ERROR
+0 A - UNKNOWN VARIABLE NAME
+0 B - MISSING EQUAL SIGN FOLLOWING VARIABLE NAME
+0 C - NON-ARRAY VARIABLE HAS AN ARRAY ELEMENT DESIGNATION - (N)
+0 D - NON-ARRAY VARIABLE HAS MULTIPLE VALUES ASSIGNED
+0 E - ASSIGNED VALUES EXCEED ARRAY DIMENSION
+0 F - SYNTAX ERROR
+
+0******************************  INPUT DATA CARDS  ******************************
+
+  $FLTCON  NMACH=1.0, MACH(1)=0.6,                                               
+   NALPHA=9.0, ALSCHD(1)=-2.0,0.0,2.0,4.0,8.0,12.0,16.0,20.0,24.0,               
+   RNNUB(1)=2.28E6$                                                              
+  $OPTINS SREF=2.25, CBARR=0.822, BLREF=3.00$                                    
+  $SYNTHS XCG=2.60, ZCG=0.0, XW=1.70, ZW=0.0, ALIW=0.0, XH=3.93,                 
+    ZH=0.0, ALIH=0.0, XV=3.34, VERTUP=.TRUE.$                                    
+  $SYNTHS HINAX=4.271$                                                           
+  $BODY NX=10.0,                                                                 
+    X(1)=0.0, .175,.322,.530,.850,1.46,2.5,3.43,3.97,4.57,                       
+    R(1)=0.0, .0417,.0833,.125,.1665,.208,.208,.208,.178,.138$                   
+  $WGPLNF CHRDTP=0.346, SSPNE=1.29, SSPN=1.5, CHRDR=1.16, SAVSI=45.0,            
+     CHSTAT=0.25, SWAFP=0.0, TWISTA=0.0, SSPNDD=0.0,                             
+     DHDADI=0.0, DHDADO=0.0, TYPE=1.0$                                           
+  $WGSCHR TOVC=0.06, DELTAY=1.3, XOVC=0.4, CLI=0.0, ALPHAI=0.0,                  
+     CLALPA(1)=0.131, CLMAX(1)=.82, CMO=0.0, LERI=0.0025, CLAMO=0.105$           
+  $WGSCHR CLMAXL=0.78$                                                           
+  $VTPLNF CHRDTP=0.42, SSPNE=0.63, SSPN=0.849, CHRDR=1.02, SAVSI=28.1,           
+   CHSTAT=.25, SWAFP=0.0, TWISTA=0.0, TYPE=1.0$                                  
+  $VTSCHR TOVC=0.09, XOVC=0.4, CLALPA(1)=0.141, LERI=0.0075$                     
+  $HTPLNF CHRDTP=0.253, SSPNE=0.52, SSPN=0.67, CHRDR=0.42, SAVSI=45.0,           
+    CHSTAT=0.25, SWAFP=0.0, TWISTA=0.0, SSPNDD=0.0,                              
+    DHDADI=0.0, DHDADO=0.0, TYPE=1.0$                                            
+  $HTSCHR TOVC=0.06, DELTAY=1.3, XOVC=0.4, CLI=0.0, ALPHAI=0.0,                  
+   CLALPA(1)=.131, CLMAX(1)=0.82, CMO=0.0, LERI=.0025, CLAMO=.105$               
+ CASEID ALL MOVEABLE HORIZONTAL TAIL, EXAMPLE PROBLEM 8                          
+ TRIM                                                                            
+ NEXT CASE                                                                       
+1          THE FOLLOWING IS A LIST OF ALL INPUT CARDS FOR THIS CASE.
+0
+  $FLTCON  NMACH=1.0, MACH(1)=0.6,                                               
+   NALPHA=9.0, ALSCHD(1)=-2.0,0.0,2.0,4.0,8.0,12.0,16.0,20.0,24.0,               
+   RNNUB(1)=2.28E6$                                                              
+  $OPTINS SREF=2.25, CBARR=0.822, BLREF=3.00$                                    
+  $SYNTHS XCG=2.60, ZCG=0.0, XW=1.70, ZW=0.0, ALIW=0.0, XH=3.93,                 
+    ZH=0.0, ALIH=0.0, XV=3.34, VERTUP=.TRUE.$                                    
+  $SYNTHS HINAX=4.271$                                                           
+  $BODY NX=10.0,                                                                 
+    X(1)=0.0, .175,.322,.530,.850,1.46,2.5,3.43,3.97,4.57,                       
+    R(1)=0.0, .0417,.0833,.125,.1665,.208,.208,.208,.178,.138$                   
+  $WGPLNF CHRDTP=0.346, SSPNE=1.29, SSPN=1.5, CHRDR=1.16, SAVSI=45.0,            
+     CHSTAT=0.25, SWAFP=0.0, TWISTA=0.0, SSPNDD=0.0,                             
+     DHDADI=0.0, DHDADO=0.0, TYPE=1.0$                                           
+  $WGSCHR TOVC=0.06, DELTAY=1.3, XOVC=0.4, CLI=0.0, ALPHAI=0.0,                  
+     CLALPA(1)=0.131, CLMAX(1)=.82, CMO=0.0, LERI=0.0025, CLAMO=0.105$           
+  $WGSCHR CLMAXL=0.78$                                                           
+  $VTPLNF CHRDTP=0.42, SSPNE=0.63, SSPN=0.849, CHRDR=1.02, SAVSI=28.1,           
+   CHSTAT=.25, SWAFP=0.0, TWISTA=0.0, TYPE=1.0$                                  
+  $VTSCHR TOVC=0.09, XOVC=0.4, CLALPA(1)=0.141, LERI=0.0075$                     
+  $HTPLNF CHRDTP=0.253, SSPNE=0.52, SSPN=0.67, CHRDR=0.42, SAVSI=45.0,           
+    CHSTAT=0.25, SWAFP=0.0, TWISTA=0.0, SSPNDD=0.0,                              
+    DHDADI=0.0, DHDADO=0.0, TYPE=1.0$                                            
+  $HTSCHR TOVC=0.06, DELTAY=1.3, XOVC=0.4, CLI=0.0, ALPHAI=0.0,                  
+   CLALPA(1)=.131, CLMAX(1)=0.82, CMO=0.0, LERI=.0025, CLAMO=.105$               
+ CASEID ALL MOVEABLE HORIZONTAL TAIL, EXAMPLE PROBLEM 8                          
+ TRIM                                                                            
+ NEXT CASE                                                                       
+0 INPUT DIMENSIONS ARE IN FT, SCALE FACTOR IS 1.0000
+
+1                               AUTOMATED STABILITY AND CONTROL METHODS PER APRIL 1976 VERSION OF DATCOM
+                                         CHARACTERISTICS AT ANGLE OF ATTACK AND IN SIDESLIP
+                                        WING-BODY-VERTICAL TAIL-HORIZONTAL TAIL CONFIGURATION
+                                          ALL MOVEABLE HORIZONTAL TAIL, EXAMPLE PROBLEM 8
+ 
+ -----------------------  FLIGHT CONDITIONS  ------------------------           --------------  REFERENCE DIMENSIONS  ------------
+  MACH    ALTITUDE   VELOCITY    PRESSURE    TEMPERATURE     REYNOLDS             REF.      REFERENCE LENGTH   MOMENT REF. CENTER
+ NUMBER                                                       NUMBER              AREA       LONG.     LAT.     HORIZ      VERT
+             FT       FT/SEC     LB/FT**2       DEG R         1/FT               FT**2        FT        FT        FT        FT
+0 0.600                                                    2.2800E+06             2.250      0.822     3.000     2.600     0.000
+0                                                               -------------------DERIVATIVE (PER DEGREE)-------------------
+0 ALPHA     CD       CL       CM       CN       CA       XCP        CLA          CMA          CYB          CNB          CLB
+0
+   -2.0    0.021   -0.134    0.0227  -0.135    0.016   -0.169    6.693E-02   -1.108E-02   -1.601E-02    4.017E-03   -1.360E-03
+    0.0    0.019    0.000    0.0000   0.000    0.019   ******    6.693E-02   -1.162E-02                             -1.755E-03
+    2.0    0.021    0.134   -0.0238   0.135    0.016   -0.177    6.749E-02   -1.335E-02                             -2.147E-03
+    4.0    0.030    0.270   -0.0534   0.271    0.011   -0.197    6.801E-02   -1.567E-02                             -2.541E-03
+    8.0    0.077    0.542   -0.1229   0.547    0.001   -0.225    6.677E-02   -1.819E-02                             -3.315E-03
+   12.0    0.163    0.804   -0.1989   0.820   -0.008   -0.242    5.809E-02   -1.988E-02                             -4.026E-03
+   16.0    0.258    1.006   -0.2819   1.039   -0.029   -0.271    4.056E-02   -2.220E-02                             -4.417E-03
+   20.0             1.129   -0.3765                              1.767E-02   -2.024E-02                             -4.405E-03
+   24.0             1.148   -0.4439                             -8.151E-03   -1.345E-02                             -3.962E-03
+0                                    ALPHA     Q/QINF    EPSLON  D(EPSLON)/D(ALPHA)
+0
+                                     -2.0      0.937     -1.234        0.617
+                                      0.0      0.904      0.000        0.617
+                                      2.0      0.937      1.234        0.603
+                                      4.0      0.991      2.413        0.572
+                                      8.0      1.000      4.565        0.493
+                                     12.0      1.000      6.358        0.359
+                                     16.0      1.000      7.435        0.152
+                                     20.0      1.000      7.576       -0.084
+                                     24.0      1.000      6.766       -0.202
+1                            AUTOMATED STABILITY AND CONTROL METHODS PER APRIL 1976 VERSION OF DATCOM
+                                         CHARACTERISTICS OF HIGH LIFT AND CONTROL DEVICES
+                          WING-BODY-VERTICAL TAIL-ALL MOVABLE HORIZONTAL STABILIZER TRIM CONFIGURATION
+ -----------------------  FLIGHT CONDITIONS  ------------------------           --------------  REFERENCE DIMENSIONS  ------------
+  MACH    ALTITUDE   VELOCITY    PRESSURE    TEMPERATURE     REYNOLDS             REF.      REFERENCE LENGTH   MOMENT REF. CENTER
+ NUMBER                                                       NUMBER              AREA       LONG.     LAT.     HORIZ      VERT
+             FT       FT/SEC     LB/FT**2       DEG R         1/FT               FT**2        FT        FT        FT        FT
+0 0.600                                                    2.2800E+06             2.250      0.822     3.000     2.600     0.000
+0-----------------UNTRIMMED--------------------HORIZONTAL STABILIZER COEFFICIENTS----------------AT TRIM INCIDENCE------------
+
+0 ALPHA     CD       CL       CM       HM                                         ALIHT    CD       CL       CM       HM
+
+   -2.0    0.002   -0.016    0.0358   3.195E-03                                     1.1   0.001    0.001   -0.0034  -2.865E-04
+    0.0    0.002    0.000    0.0000   0.000E+00                                     0.0   0.001    0.000    0.0000   0.000E+00
+    2.0    0.002    0.016   -0.0356  -3.195E-03                                    -1.2   0.001   -0.002    0.0044   3.779E-04
+    4.0    0.004    0.032   -0.0721  -6.461E-03                                    -2.5   0.001   -0.005    0.0109   9.429E-04
+    8.0    0.011    0.065   -0.1471  -1.314E-02                                    -5.7   0.001   -0.013    0.0298   2.608E-03
+   12.0    0.021    0.096   -0.2177  -1.953E-02                                    -9.4   0.000   -0.021    0.0477   4.189E-03
+   16.0    0.032    0.119   -0.2735  -2.447E-02                                   -14.2  -0.001   -0.025    0.0549   4.821E-03
+   20.0    0.038    0.132   -0.3107  -2.729E-02                                   -24.1  -0.001   -0.027    0.0593   5.189E-03
+   24.0    0.043    0.140   -0.3400  -2.886E-02                                   -58.4  -0.001   -0.027    0.0567   4.909E-03
+
+0                                         WING-BODY-TAIL COEFFICIENTS AT TRIM INCIDENCE
+
+0                                                    ALPHA     CD       CL
+0
+                                                      -2.0    0.021   -0.124
+                                                       0.0    0.019    0.000
+                                                       2.0    0.021    0.123
+                                                       4.0    0.029    0.246
+                                                       8.0    0.072    0.486
+                                                      12.0    0.151    0.713
+                                                      16.0    0.237    0.876
+                                                      20.0    0.001    0.952
+                                                      24.0    0.001    0.935
+0*NOTE** ANGLES OF ATTACK WHERE NO OUTPUT EXISTS INDICATES LACK OF CONTROL MOMENT
+1          THE FOLLOWING IS A LIST OF ALL INPUT CARDS FOR THIS CASE.
+0
+1 END OF JOB.
