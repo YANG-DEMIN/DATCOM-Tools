@@ -358,7 +358,7 @@ disp(['DATCOM input file written into: ', filename,'.dcm'])
 function splitArray = dcmArraySplit(myArray,varindent)
 % Split char array within FORTRAN limit
 
-chunk = 72-length(varindent); % original indentation
+chunk = 72; % original indentation
 rows = ceil((length(myArray)+length(varindent))/chunk);
 if rows > 1
     c = 1;
